@@ -1,0 +1,486 @@
+GUIA LINUX !!
+
+- Ctr-Alt-Backspace --> Logout
+
+- Ctr-Alt-F2 --> Terminate X server and move to terminal 2 (F3 move pra terminal 3 ...)
+** Nao funciona no UBUNTO, POIS NAO FECHA O X SERVER !!!!
+- startx --> Strart the Graphical User Interface (GUI)
+** Nao funciona no UBUNTO, POIS NAO FECHOU O X SERVER !!!
+
+sudo halt
+sudo reboot
+sudo shutdown -h now
+
+sudo apt-get update	--->> Atualisa os pacotes antes de instalar os programas
+sudo apt-get upgrade    --->> Atualisa os programas instalados
+
+sudo apt-cache search steam   -->> busca pelo pacote da steam ou qualquer outro
+
+
+x---------------x--------------------x
+ LINE EDITING
+
+        These keys can be used to edit text being entered 
+        on the "command line" at the bottom of the screen.
+
+ RightArrow ..................... ESC-l ... Move cursor right one character.
+ LeftArrow ...................... ESC-h ... Move cursor left one character.
+ ctrl-RightArrow  ESC-RightArrow  ESC-w ... Move cursor right one word.
+ ctrl-LeftArrow   ESC-LeftArrow   ESC-b ... Move cursor left one word.
+ HOME ........................... ESC-0 ... Move cursor to start of line.
+ END ............................ ESC-$ ... Move cursor to end of line.
+ BACKSPACE ................................ Delete char to left of cursor.
+ DELETE ......................... ESC-x ... Delete char under cursor.
+ ctrl-BACKSPACE   ESC-BACKSPACE ........... Delete word to left of cursor.
+ ctrl-DELETE .... ESC-DELETE .... ESC-X ... Delete word under cursor.
+ ctrl-U ......... ESC (MS-DOS only) ....... Delete entire line.
+ UpArrow ........................ ESC-k ... Retrieve previous command line.
+ DownArrow ...................... ESC-j ... Retrieve next command line.
+ TAB ...................................... Complete filename & cycle.
+ SHIFT-TAB ...................... ESC-TAB   Complete filename & reverse cycle.
+ ctrl-L ................................... Complete filename, list all.
+
+  -?  ........  --help
+  h  H          Display help
+  man cp	Manuel de cada comando!!
+
+x---------------x--------------------x
+ls tab tab
+qualquer comando tab tab  -->  mostra todas as variacoes do comando 
+
+lspci -> mostra ate'  a placa de video
+lsusb
+
+
+x---------------x--------------------x
+NVIDIA DRIVERS
+sudo add-apt-repository ppa:graphics-drivers
+sudo apt-get update
+
+sudo apt-get install nvidia-390     -->> Pegar a ultima versao que aparece na lista apos o apt-get do repositorio
+
+Pra ver se instalou:
+lsmod | grep nvidia  -->> isso lista os modulos procurando por referencias dos drivers isntalados
+
+sudo apt-mark hold nvidia-390
+
+Para apagar:
+sudo apt-get purge nvidia*
+
+x---------------x--------------------x
+STEAM
+sudo apt-get install steam
+
+
+x---------------x--------------------x
+ALLIAS
+alias apt-search='apt-cache search'
+
+.bashrc    --->  e' onde esta definido o meu terminal!!
+
+source .bashrc   -->> usar pra refreshar depois dos comandos alias
+
+echo $SHELL   -->  /bin/bash   --> Mostra onde estao tuas configuracoes
+
+
+x---------------x--------------------x
+htop     -->>  Mostra os processos
+F6 -> Sort by PID
+F9 -> Kill o que tiver encima!
+
+
+x---------------x--------------------x
+OPENGL   -->>   INSTALAR
+
+sudo apt-get install freeglut3-dev
+
+--> To have found this on your own, you could have done:
+
+sudo apt-cache search glut
+
+--> After you have installed package freeglut3-dev you can confirm it contains the needed GL files by issuing
+
+dpkg -L freeglut3-dev
+
+--> which will list contents of the package
+
+
+x---------------x--------------------x
+CODEBLOCKS
+(tirado do site do mantenedor do Codebloks: http://www.edivaldobrito.com.br/instalar-ide-codeblocks-no-ubuntu/)
+
+Passo 2. Se ainda não tiver, adicione o repositório do programa com este comando
+sudo add-apt-repository ppa:damien-moore/codeblocks-stable
+
+Passo 3. Atualize o gerenciador de pacotes com o comando:
+sudo apt-get update
+
+Passo 4. Agora use o comando abaixo para instalar o programa;
+sudo apt-get install codeblocks codeblocks-contrib
+
+Se fizer cagada no meio de der Crtl-C e parar a instalacao, reinicia assim: 
+sudo apt-get install --reinstall codeblocks codeblocks-contrib
+
+Para Desinstalar o Codeblocks:
+sudo add-apt-repository ppa:damien-moore/codeblocks-stable -r -y
+sudo apt-get remove codeblocks --auto-remove
+
+
+
+
+x----------------------x-----------------x----------
+SUBLIME
+
+Add repository:
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+
+Ensure apt is set up to work with https sources:
+sudo apt-get install apt-transport-https
+
+Select the channel to use:
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+Update apt sources and install Sublime Text
+sudo apt-get update
+sudo apt-get install sublime-text
+
+x----------------------x-----------------x----------
+Configure o Sublime para o Assembly do Processador ICMC
+
+Copiar arquivos:
+icmc_processor.sublime-build
+icmc.tmLanguage
+De: https://github.com/simoesusp/Processador-ICMC/blob/master/Text_Editors_Sintaxe/Sublime_Sintaxe_F7.tar
+Para: /home/simoes/.config/sublime-text-3/Packages
+
+icmc_processor.sublime-build ==> 
+{
+	"selector": "source.ICMC" ,
+	"working_dir": "${project_path:${folder}}",
+	"variants": [
+		{ 
+		  "cmd": ["/usr/bin/montador", "$file_base_name.asm", "$file_base_name.mif"],
+		  "name": "Build",
+		},
+		{
+		  "cmd": ["/usr/bin/buildandrun", "$file_base_name.asm", "$file_base_name.mif", "charmap.mif"],
+		  "name": "Run",
+		}
+	]
+}
+
+Criar arquivo " buildandrun " na pasta /user/bin   com o seguinte:
+#!/bin/bash
+/usr/bin/montador "$1" "$2" && /usr/bin/sim "$2" "$3"
+
+Obs.: 	&&  faz rodar as duas linhas, mas so'  se a primeira rodar!
+		$1  ... $3  Sao os argumentos passados
+
+Cuidado:  ocharmap.mif tem qque estar na mesma pasta do ASM
+
+No Sublime vai colorir a sintaxe e pra montar e simular:
+Shift+Ctrl+B  -->  Builda do asm -> mif
+F7 --> Save + Build and Run (simula) 
+
+
+
+
+
+
+x---------------x--------------------x
+		BILEKI'S GUIDE on How to prepare the SD Card on Linux    ---   
+x---------------X--------------------X
+
+1) How to prepare the SD Card on Linux - Without using NOOBS
+
+- Step 1: Insert the SD Card in the laptop card reader.
+
+- Step 2: Open terminal and enter the following command:
+	df -h
+		This command will list all mounted devices.
+
+- Step 3: Find out which device in the list refers to SD Card (usually /dev/mmcblk0p1 or /dev/ssd1) and unmount it with the command: 
+	umount /dev/mmcblk0p1
+		"mmcblk0p1"(or "ssd1") must be replaced for the SD Card device name.
+
+- Step 4: Access the folder that contains the OS image file and enter the command:
+	dd bs=4M if=2015-05-05-raspbian-wheezy.img of=/dev/mmcblk0, 
+		"mmcblk0"(or "ssd") is the SD Card device name, without partition (in this case mmcblk0(ou ssd), not "mmcblk0p1"(or "ssd1").  
+	- Warning: Do not confunda with the HardDisk device, or it will destroy your OS!!!
+
+- Step 5: After finish the image writing mentioned in Step 4, before remove the SD Card from the card reader, enter the command:
+	sync
+		so, remove and insert it in Raspberry Pi, connecting to the internet with a network cable, a USB keyboard and a HDMI cable from a monitor in the Raspberry Pi board. Next, we must plug a 5V energy source in the Raspberry Pi with at least 700mA to turn the board on.
+		
+
+
+
+-----------x---------------x--------------
+APPENDIX A: Network configuration for static IP (eg. Simoes room)
+	-- Must be done always. The reboot erase all!!!
+	-- See Appendix C to make it stay configured
+	-- Everything between '<' and '>', must be replaced by connection values
+	
+	Enter the following command in the terminal:
+	sudo ifconfig eth0 <IP> netmask <MASCARA>
+		Eg:
+		IP = 143.107.231.92
+		MASCARA = 255.255.255.192
+		ex.: sudo ifconfig eth0 143.107.231.92 netmask 255.255.255.192
+
+	Enter the following command in the terminal:
+	sudo route add default gw <GATEWAY>
+	Ex:
+		GATWAY = 143.107.231.65
+		ex.: sudo route add default gw 143.107.231.65
+
+	Enter the following command in the terminal:
+	sudo nano /etc/resolv.conf
+		add line: 
+			nameserver 8.8.8.8
+		type:
+		Ctrl+O  -> Salvar
+		Ctrl+X  -> Sair
+		
+		If using VI: 
+			Xinga e Reza!!!
+			type "i" to add text
+			type ESC and :wq  to save and exit
+			Reza e Xinga mais um pouco!!!
+
+	Enter the following command in the terminal:
+	ping www.google.com
+		To test connection!
+
+	Dentro da USP as portas baixas são bloqueadas, então, caso esteja tentando conectar de um cabo de rede de dentro da USP, executar no terminal o comando:
+	sudo nano /etc/ssh/sshd_config
+		---trocar de Port 22 pra Port 22000
+		
+
+-----------x---------------x--------------
+APPENDIX B: To establish connection to RaspberryPi by SSH in a Laptop running Linux
+
+In RaspberryPi:
+	Enter the following command in the terminal:
+	sudo nano /etc/network/interfaces
+	--search the following line 
+	
+		iface eth0 inet manual (or iface eth0 inet dhcp)
+	
+	--change to
+	
+		iface eth0 inet static
+			address 192.168.0.10
+			broadcast 192.168.0.255
+			network 192.168.0.0
+			netmask 255.255.255.0
+			gateway 192.168.0.1
+			dns-nameservers 8.8.8.8
+			
+		(and obviously comment the other lines in the file...)
+		
+		type:
+		Ctrl+O  -> Save
+		Ctrl+X  -> Exit
+
+
+In the laptop, running linux:
+	Enter the command in terminal:
+		sysctl -w net.ipv4.ip_forward=1
+
+	Enter the command in terminal:
+	ifconfig eth0 192.168.0.1 netmask 255.255.255.0
+		Obs1.: 192.168.0.1   will be the laptop IP Address in the network
+		Obs2.: the laptop IP Address must have the same 3 fist numbers: eg. 192.168.0._
+	
+	Enter the command in terminal:
+	sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+	
+
+To establish connection to RaspberryPi just plug a network cable between the laptop and the Rasp board and enter the command:
+	ssh pi@192.168.0.10	--> this is the IP Address that you have saved in the Raspberry interfaces file.
+
+
+
+
+
+-----------x---------------x--------------
+APPENDIX C - Static IP permanently after reboots
+
+	A. Checking Set Up
+
+- Boot into Raspian and log in and connect to the internet doing Apendix A commands!
+
+- First, we need to list the network interface we currently have available:
+
+	cat /etc/network/interfaces
+
+		The line . . . . 
+			iface eth0 inet dhcp
+
+			- Implies that we're currently getting out IP address by DHCP, meaning it's being dynamically registered by the router. This is what we want to change!
+
+	B. Gathering Information
+
+- Fist of all we need to grab some information from our router and Pi. There's a couple of command we need to run to get this info. Have a pen and paper handy! . . . 
+	ifconfig
+
+- This reveals your router information, the bit you want is after eth0 (the ethernet connection). . . .
+	eth0      Link encap:Ethernet  HWaddr b8:27:eb:b3:fc:2c
+
+               inet addr:192.168.1.81  Bcast:192.168.1.255  Mask:255.255.255.0
+
+- Write down the following information. . .
+
+	inet addr – 192.168.1.81 (Pi's Current IP Address)
+	Bcast –  192.168.1.255 (The Broadcast IP Range)
+	Mask –  255.255.255.0 (Subnet Mask Address)
+
+- We need a little more information before we proceed. Use the command. . . 
+
+	netstat -nr
+
+		(route -n will give you the same info)
+
+- We need:
+
+	'Gateway' Address – 192.168.1.254
+	'Destination' Address – 192.168.1.0
+
+	C. Editing Network Configuration
+
+- We now need to plug this information into the Pi's network configuration file using a text editor.
+
+	sudo nano /etc/network/interfaces
+
+		- Simply change the line that reads:
+
+			iface eth0 inet dhcp
+
+			to
+
+			iface eth0 inet static
+
+- Then directly below this line enter the following (Please Note. You will need your own addresses we gathered in Part B, more details below). . . . 
+
+	address 143.107.231.92
+	netmask 255.255.255.192
+	network 143.107.231.64
+	broadcast 143.107.231.127
+	gateway 143.107.231.65
+	dns-nameservers 143.107.231.12 8.8.8.8
+
+- To clarify what each part means. . . . 
+
+address – The address you want to give your Pi, this can be any IP in the network range, but it's usually advisable to go higher rather than lower, or you could end up logging different devices to the same IP! I've selected 192.168.1.81, as we're already registered to that address (denoted by 'inet addr'), but this can be any IP address from the range192.168.1.1 to 192.168.1.255.
+
+netmask – The 'Mask' address we wrote down earlier.
+
+network – The router IP address, this is the 'Destination' Address was found earlier. You can also grab this off your router, it will say on the side somewhere.
+
+broadcast – The 'Bcast' address we wrote down earlier. 
+
+gateway – This is the 'Gateway' address we found earlier.
+
+- So, it should look something like the above, but with your values! Remember to save before exit, CTRL+X (exit) then yes to save changes!
+
+	
+	D. Re-check Static IP Configuration
+
+- Remove any existing leases
+
+	sudo rm /var/lib/dhcp/*
+
+- Then we'll need to reboot and check your changes. . . 
+
+	sudo reboot
+
+- One last thing that needs to be modified is the /etc/resolv.conf file. (Problem: This does not work for me!!Raspberry erases this file every time it reboots!!!!!!!! I included one line with nameservers in the "interfaces" file and it finally worked!!!!!!!!!!!
+-- This file contains information of DNS name resolvers that allow your raspberry pi to resolve names to IP addresses.  For example, if you ping www.suntimebox.com the raspberry pi will have to determine the IP address of www.suntimebox.com.
+- Enter the following command to edit the resolv.conf file.
+
+	sudo nano /etc/resolv.conf
+		- Enter the follow Google public dns server IP address.
+		nameserver 8.8.8.8
+		name server 8.8.4.4
+
+--> The problem is that Rasp will erase this file everityme it reboots!!! Do not know why!!!
+-- So, the trick is to add the line bellow to the file: etc/network/interfaces:
+	dns-nameservers 143.107.231.12 8.8.8.8
+
+
+
+----------- Abstract ----------
+The file interfaces must be like this to work in Simoes room:
+Edit with: sudo nano /etc/network/interfaces
+
+	auto lo
+	iface lo inet loopback
+
+	iface eth0 inet static
+	address 143.107.231.92
+	netmask 255.255.255.192
+	network 143.107.231.64
+	broadcast 143.107.231.127
+	gateway 143.107.231.65
+	dns-nameservers 143.107.231.12 8.8.8.8
+
+	auto wlan0
+	allow-hotplug wlan0
+	iface wlan0 inet manual
+	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+
+	-->> restart the network stuff without need reboot (That did not work for me!!!!!)!:
+		sudo /etc/init.d/networking restart
+
+		
+---------------X----------------X-------------		
+APPENDIX D: Configure RaspberryPi to get a DHCP address from your router automatic
+
+	comment all other lines referent to eth0 (ex. iface eth0 inet static ...)
+	Include those tree lines:
+		auto eth0 
+		allow-hotplug eth0
+		iface eth0 inet dhcp
+		
+		
+
+
+
+		
+X------------------X-------------------X
+			SIMOES' GUIDE
+X------------------X-------------------X
+
+1) Configure GCC to compile optimizing to ARM7 of RaspberryPi 2
+	GCC : gcc -O3 -march=armv7-a -mfpu=vfp -mfloat-abi=hard hello.c -o hello.exe
+	
+	Create a file that overwrite GCC and you don't have to enter this command line every time you want do this:
+	
+	a)Create a new file with the following contents:
+
+		#!/bin/sh
+		exec /usr/bin/gcc "$@" -march=armv7-a -mfpu=vfp -mfloat-abi=hard
+		
+	--Change /usr/bin/gcc to your actual compiler if that's not right on your system.
+
+	b)Save it as /home/pi/bin/gcc.
+
+	c)Make the new script executable:
+		chmod +x /home/pi/bin/gcc
+
+	d)Repeat to create another file for g++.
+
+	e)Add /home/pi/bin to the start of your path:
+		export PATH=/home/pi/bin:$PATH
+	
+	e)Compile your project. Whenever your new scripts are on the path they will override whatever the makefile says.
+
+	gcc --help
+	gcc --target-help             -->  Help com parâmetros de otimização como o march
+- Se botar -v  na linha de comando pra compilar, ele da um monte de mensagems dizendo tudo que ta fazendo!!
+	- Assim pode-se conferir se pegou os parâmetros do Arm7
+	
+
+
