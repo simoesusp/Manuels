@@ -1,4 +1,44 @@
 
+Comeca clonando um repositorio do github:
+git clone https://github.com/simoesusp/Population-Ecology-Simulation
+
+Mostra o status da pasta local se tem mudancas locais e se esta'  diferente do repositorio:
+git status
+
+Add and remove files:
+git add --all
+
+Add and commit in one step:
+git commit -am "Message"
+
+Sincroniza as mudancas locais com o github:
+git push
+
+Sincroniza as mudancas do github na pasta local:
+git pull
+-->  Nao mostra se o arquivo local esta'  diferente!
+
+REVERTER PARA UMA VERSAO:
+git log   ->  Pega o codigo da versao
+Pra voltar usar checkout, pois o revert NAO FUNCIONA !
+git checkout d0a57f1f3cbaae22b8706d2d7ee64e9fdf07c87
+-->> CUIDADO com o checkout -->  Ele sai baixando e merjando tudo sem te dar sequer um warnin!!!!
+
+
+
+OBS.: Quando estiver trabalhando com outras pessoas no mesmo projeto:
+- incluir ocara como colaborador no github
+- Se eu alterar o mesmo arquivo e ele tambem localmente...
+- Eu dou commit,
+- Ele da commit
+- Ele da push pra atualizar as mudancas dele no github
+- Quando eu der push --> Vai abrir o nano pra explicar o merge automatico que ele vai dar!!
+- Dai'  ele atualiza minha pasta local sozinho juntando minhas modificacoes com as do cara
+- Dai'  eu tenho que dar git push   --> pra atualizar o github com o arquivo com as duas modificacoes
+- Dai'  o cara da'  git pull pra pegar o arquivo com as duas modificacoes de boa, sem faer merge!
+
+
+
 SETUP
 
 Configuring user information used across all local repositories
@@ -53,7 +93,7 @@ List the remote connections you have to other repositories, but include the URL 
 
 Checa o github pra ver se tem diferencas com os arquivos locais:
 git checkout
-
+-->> CUIDADO com o checkout -->  Ele sai baixando e merjando tudo sem te dar sequer um warnin!!!!
 
 
 

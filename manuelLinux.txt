@@ -16,6 +16,7 @@ sudo apt-get upgrade    --->> Atualisa os programas instalados
 
 sudo apt-cache search steam   -->> busca pelo pacote da steam ou qualquer outro
 
+~/   significa :  /home/simoes/
 
 x---------------x--------------------x
  LINE EDITING
@@ -71,6 +72,13 @@ x---------------x--------------------x
 STEAM
 sudo apt-get install steam
 
+/home/simoes/.steam/steam/steamapps/common/Hearts of Iron IV/common/units
+
+/home/simoes/.steam/steam/steamapps/workshop
+
+/home/simoes/.local/share/Paradox Interactive/Hearts of Iron IV/mod
+
+/home/simoes/.local/share/Paradox Interactive/Hearts of Iron IV/save games
 
 x---------------x--------------------x
 ALLIAS
