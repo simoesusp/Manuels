@@ -1,5 +1,7 @@
 GUIA LINUX !!
 
+- Ctr-Alt-T
+
 - Ctr-Alt-Backspace --> Logout
 
 - Ctr-Alt-F2 --> Terminate X server and move to terminal 2 (F3 move pra terminal 3 ...)
@@ -17,6 +19,10 @@ sudo apt-get upgrade    --->> Atualisa os programas instalados
 sudo apt-cache search steam   -->> busca pelo pacote da steam ou qualquer outro
 
 ~/   significa :  /home/simoes/
+./programa   :   roda o programa que esta' na mesma pasta
+
+
+
 
 x---------------x--------------------x
  LINE EDITING
@@ -46,11 +52,21 @@ x---------------x--------------------x
   man cp	Manuel de cada comando!!
 
 x---------------x--------------------x
+LS
 ls tab tab
 qualquer comando tab tab  -->  mostra todas as variacoes do comando 
 
 lspci -> mostra ate'  a placa de video
 lsusb
+
+
+x---------------x--------------------x
+WINE
+Pra rodar umprograma«
+- Ligar Winetricks
+- Run a Commandline shell
+- Vai para: ~/.wine/dosdevices/c:/Ants
+- Digita: ./ants2.exe
 
 
 x---------------x--------------------x
