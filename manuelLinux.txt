@@ -21,7 +21,7 @@ sudo apt-cache search steam   -->> busca pelo pacote da steam ou qualquer outro
 ~/   significa :  /home/simoes/
 ./programa   :   roda o programa que esta' na mesma pasta
 
-
+GIT do Principia: http://principia.icmc.usp.br/redmine
 
 
 x---------------x--------------------x
@@ -59,6 +59,20 @@ qualquer comando tab tab  -->  mostra todas as variacoes do comando
 lspci -> mostra ate'  a placa de video
 lsusb
 
+x---------------x--------------------x
+MUDAR OWNER
+sudo chown -R simoes: Foguete  --> Se for Folder do ROOT, tem que mudar com sudo
+
+chown -R USERNAME:GROUPNAME /PATH/TO/FILE
+--> Or, if the group shall be the specified user's primary group (usually same name), you can also omit the GROUPNAME and just give the USERNAME: with a colon (no space before it!). It will be set implicitly:
+
+chown -R USERNAME: /PATH/TO/FILE
+--> To only change the user and leave the group as it is, just specify USERNAME and no group name and no colon:
+
+chown -R USERNAME /PATH/TO/FILE
+--> To only change the group and leave the owner user as it is, just specify :GROUPNAME with a leading colon:
+
+chown -R :GROUPNAME /PATH/TO/FILE
 
 x---------------x--------------------x
 WINE
@@ -67,6 +81,30 @@ Pra rodar umprogramaÇ
 - Run a Commandline shell
 - Vai para: ~/.wine/dosdevices/c:/Ants
 - Digita: ./ants2.exe
+
+
+
+x---------------x--------------------x
+ARDUINO
+sudo apt-get update  --> Updata a lista de repositorios
+sudo apt-get install arduino  --> instala o Arduino IDE
+sudo apt-get install arduino arduino-core  -> instala mais bagulhos
+sudo apt upgrade  --> Updata todo sw que jã' foi instalado! Inclusive o do Arduino
+
+--> So' que agora nao vai encontrar a porta serial pra programar o arduino!
+--> Tem que arrumar assim:
+
+lsusb  --> Lista tudo que esta' instalado nas USBs, se conectar o cabo e daro comando novamente vai mostrar a unica diferente, que e'  o arduino!
+--> Isso mostra se ja' tem um driver instalado pro chip de USB da placa do Arduino! Geramelte tem no Ubuntu.
+
+ls /dev  --> Lista tudo que esta' instalado na maquina, geralmente o arduino e' a ttyUSB0, se nao tiver nada mais ligado nas USB
+ls -l /dev/ttyUSB0
+	crw-rw---- 1 root dialout 188, 0 Mai  9 12:44 /dev/ttyUSB0
+--> Isso mostra que o ttyUSB0  faz parte do grupo dialout
+--> Agora e'  so'  adicionar nosso usuario ao grupo dialout
+sudo usermod -a -C dialout simoes     --> onde simoes e' seu username !!
+--> Tem que se deslogar e logar novamente pra fazer essas mudancas!!
+
 
 
 x---------------x--------------------x
