@@ -21,6 +21,12 @@ sudo apt-cache search steam   -->> busca pelo pacote da steam ou qualquer outro
 ~/   significa :  /home/simoes/
 ./programa   :   roda o programa que esta' na mesma pasta
 
+echo eca > file.txt    -->  printa "eca" no final do arquivo file.txt
+echo eca >> file.txt    -->  sobrescreve o arquivo file.txt com a palavra eca (APAGANDO TUDO!!)
+
+|   -->  Redicionamento de output pra outro programa!
+ex.: cat lista | grep esposa > newlist  --> abre e percorro todo o qrquivo lista e procura por linhas que contem "esposa" e printa no novo arquivo newlist
+
 GIT do Principia: http://principia.icmc.usp.br/redmine
 
 
