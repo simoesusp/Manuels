@@ -74,6 +74,18 @@ chown -R USERNAME /PATH/TO/FILE
 
 chown -R :GROUPNAME /PATH/TO/FILE
 
+
+x---------------x--------------------x
+CHANGE PERMISSION    /    INSTALL FILES
+
+--> give the .sh file permission to execute:
+chmod +x file.sh
+chmod +x *   --> Troca de todos os files na pasta
+
+--> then you can execute it with 
+./file.sh
+
+
 x---------------x--------------------x
 WINE
 Pra rodar umprogramaÇ
@@ -138,9 +150,11 @@ x---------------x--------------------x
 ALLIAS
 alias apt-search='apt-cache search'
 
-.bashrc    --->  e' onde esta definido o meu terminal!!
+Pra ficar permanente, edutar esse arquivoÇ
+~/.bashrc    --->  e' onde esta definido o meu terminal!!
 
-source .bashrc   -->> usar pra refreshar depois dos comandos alias
+E depois tem que dar:
+source ~/.bashrc   -->> usar pra refreshar depois de acrescentar comandos alias no arquivo .bashrc
 
 echo $SHELL   -->  /bin/bash   --> Mostra onde estao tuas configuracoes
 
