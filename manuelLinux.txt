@@ -27,6 +27,13 @@ echo eca >> file.txt    -->  sobrescreve o arquivo file.txt com a palavra eca (A
 |   -->  Redicionamento de output pra outro programa!
 ex.: cat lista | grep esposa > newlist  --> abre e percorro todo o qrquivo lista e procura por linhas que contem "esposa" e printa no novo arquivo newlist
 
+sudo rm -r NOMEDAPASTA  --> Remove a pasta (-r  =>  recursivamente)
+mkdir  NOMEDAPASTA   --> Cria pasta
+
+
+
+ssh-keygen -t rsa -b 4096 -C "simoes@icmc.usp.br"   -->  Cria uma chave SSH e salva em: ~/.sh
+
 GIT do Principia: http://principia.icmc.usp.br/redmine
 
 
@@ -90,6 +97,14 @@ chmod +x *   --> Troca de todos os files na pasta
 
 --> then you can execute it with 
 ./file.sh
+
+
+x---------------x--------------------x
+ENCRIPITAR
+
+gpg -c historico.txt   -->  -c pra encripi
+rm historico.txt       --> E' bom remover o antigo
+gpg historico.txt.gpg  --> Pra desencripitar
 
 
 x---------------x--------------------x
@@ -163,6 +178,13 @@ E depois tem que dar:
 source ~/.bashrc   -->> usar pra refreshar depois de acrescentar comandos alias no arquivo .bashrc
 
 echo $SHELL   -->  /bin/bash   --> Mostra onde estao tuas configuracoes
+
+Tambem pode fazer FUNCOES (EDITANDO O ARQUIVO .bashrc):
+function gg(){ 
+  git add --all
+  git commit -m $1
+  git push
+  }
 
 
 x---------------x--------------------x
