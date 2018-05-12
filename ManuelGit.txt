@@ -37,6 +37,18 @@ Sincroniza as mudancas do github na pasta local:
 git pull
 -->  Nao mostra se o arquivo local esta'  diferente!
 
+
+PODE FAZER TUDO COM UMA FUNCAO: 
+Tambem pode fazer FUNCOES (EDITANDO O ARQUIVO ~/.bashrc):
+function gg(){ 
+  git add --all
+  git commit -m $1
+  git push
+  }
+
+
+
+
 REVERTER PARA UMA VERSAO:
 git log   ->  Pega o codigo da versao
 Pra voltar usar checkout, pois o revert NAO FUNCIONA !
