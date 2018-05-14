@@ -21,8 +21,8 @@ sudo apt-cache search steam   -->> busca pelo pacote da steam ou qualquer outro
 ~/   significa :  /home/simoes/
 ./programa   :   roda o programa que esta' na mesma pasta
 
-echo eca > file.txt    -->  printa "eca" no final do arquivo file.txt
-echo eca >> file.txt    -->  sobrescreve o arquivo file.txt com a palavra eca (APAGANDO TUDO!!)
+echo eca >> file.txt    -->  printa "eca" no final do arquivo file.txt
+echo eca > file.txt    -->  sobrescreve o arquivo file.txt com a palavra eca (APAGANDO TUDO!!)
 
 |   -->  Redicionamento de output pra outro programa!
 ex.: cat lista | grep esposa > newlist  --> abre e percorro todo o qrquivo lista e procura por linhas que contem "esposa" e printa no novo arquivo newlist
@@ -145,7 +145,7 @@ NVIDIA DRIVERS
 sudo add-apt-repository ppa:graphics-drivers
 sudo apt-get update
 
-sudo apt-get install nvidia-390     -->> Pegar a ultima versao que aparece na lista apos o apt-get do repositorio
+sudo apt-get install nvidia-390     -->> Pegar a ultima versao que aparece na lista apos o apt- do repositorio
 
 Pra ver se instalou:
 lsmod | grep nvidia  -->> isso lista os modulos procurando por referencias dos drivers isntalados
@@ -318,7 +318,7 @@ x---------------X--------------------X
 		
 
 
-
+		
 -----------x---------------x--------------
 APPENDIX A: Network configuration for static IP (eg. Simoes room)
 	-- Must be done always. The reboot erase all!!!
