@@ -24,6 +24,33 @@ CRIA UM PROJETO:
 Comeca clonando um repositorio do github:
 git clone https://github.com/simoesusp/Population-Ecology-Simulation
 
+Obs.: Se fizer assim, vai te pedir o login e senha cada vez que da um PUSH.
+
+Pode fazer por SSH -->
+	CRIA UMA CHAVE SSH:
+	ssh-keygen -t rsa -b 4096 -C "simoes@icmc.usp.br"   -->  Cria uma chave SSH e salva em: ~/.sh 
+		--> Tem que ser o mesmo email do github!
+
+	CADASTRE A CHAVE NO GITHUB
+		--> Vai na aba Setings do User (simoesusp)
+			--> SSH and GPG Keys
+				--> New SSH Keys
+
+		--> Vai na pasta ~/.ssh
+			--> Copie TODO o conteudo do arquivo "id_rsa.pub"  para o github
+
+	Pega caminho do SSH no Github:
+		No Repositorio ja' criado, Clica em CLONE OR DOWNLOAD
+			--> Clone with SSH    --> Use an SSH key and passphrase from account.
+			--> COPIA o caminho: git@github.com:simoesusp/Arduino-Projects.git
+
+	CLONA COM:
+		git clone Clone with SSH git@github.com:simoesusp/Arduino-Projects.git
+
+	--> Dai' sempre que fizer PUSH, ele vai usar a chave SSH que foii criada! E nao vai mais pedir a senha!!!
+
+
+
 Mostra o status da pasta local se tem mudancas locais e se esta'  diferente do repositorio:
 git status
 
