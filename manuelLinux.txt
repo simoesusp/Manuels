@@ -38,6 +38,11 @@ echo eca > file.txt    -->  sobrescreve o arquivo file.txt com a palavra eca (AP
 |   -->  Redicionamento de output pra outro programa!
 ex.: cat lista | grep esposa > newlist  --> abre e percorro todo o qrquivo lista e procura por linhas que contem "esposa" e printa no novo arquivo newlist
 
+&&  --> Concatena comandos
+ex.: /usr/bin/montador "$1" "$2" && /usr/bin/sim "$2" "$3"
+Obs.: 	&&  faz rodar as duas linhas, mas so'  se a primeira rodar!
+		$1  ... $3  Sao os argumentos passados
+
 sudo rm -r NOMEDAPASTA  --> Remove a pasta (-r  =>  recursivamente)
 mkdir  NOMEDAPASTA   --> Cria pasta
 
@@ -174,17 +179,28 @@ sudo apt upgrade  --> Updata todo sw que ja' foi instalado! Inclusive o do Ardui
 --> So' que agora nao vai encontrar a porta serial pra programar o arduino!
 --> Tem que arrumar assim:
 
-lsusb  --> Lista tudo que esta' instalado nas USBs, se conectar o cabo e daro comando novamente vai mostrar a unica diferente, que e'  o arduino!
+lsusb  --> Lista tudo que esta' instalado nas USBs, se conectar o cabo e dar o comando novamente vai mostrar a unica diferente, que e'  o arduino!
 --> Isso mostra se ja' tem um driver instalado pro chip de USB da placa do Arduino! Geramelte tem no Ubuntu.
 
 ls /dev  --> Lista tudo que esta' instalado na maquina, geralmente o arduino e' a ttyUSB0, se nao tiver nada mais ligado nas USB
 ls -l /dev/ttyUSB0
 	crw-rw---- 1 root dialout 188, 0 Mai  9 12:44 /dev/ttyUSB0
 --> Isso mostra que o ttyUSB0  faz parte do grupo dialout
+
 --> Agora e'  so'  adicionar nosso usuario ao grupo dialout
-sudo usermod -a -C dialout simoes     --> onde simoes e' seu username !!
+sudo usermod -a -G dialout simoes     --> onde simoes e' seu username !!
 --> Tem que se deslogar e logar novamente pra fazer essas mudancas!!
 
+--> Ver todos os grupos eos users que pertencem a eles:
+cat /etc/group
+
+--> Se tudo der errado... Tentar:
+--> sudo chmod 666 /dev/ttyUSB0   --> Da' todas as permissoes para o ttyUSB0
+
+	Run command "sudo dmesg -c" which prints and clears the kernel log messages since startup
+	Now plug the arduino board into an USB port
+	Run command "dmesg" in the console (no need to do this as root this time )
+	--> Isso mostra tudo que acontece na maquina... Vai mostrar o mapeamento da USB
 
 
 x---------------x--------------------x
