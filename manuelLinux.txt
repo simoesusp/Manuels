@@ -9,6 +9,17 @@ GUIA LINUX !!
 - startx --> Strart the Graphical User Interface (GUI)
 ** Nao funciona no UBUNTO, POIS NAO FECHOU O X SERVER !!!
 
+Ctrl-C    -->   STOPA um job que esteja rodando no terminal
+
+Ctrl-Z    -->   PAUSA um job que esteja rodando no terminal
+ex.: [1]+  Stopped                 ping -c3 www.google.com
+
+jobs      -->   Lista os jobs da curent section
+ex.: [1]+  Stopped                 ping -c3 www.google.com
+
+fg        -->   Reinicia os jobs Pausados
+
+
 sudo halt
 sudo reboot
 sudo shutdown -h now
@@ -149,7 +160,7 @@ ssh-keygen -t rsa -b 4096 -C "simoes@icmc.usp.br"   -->  Cria uma chave SSH e sa
 
 x---------------x--------------------x
 WINE
-Pra rodar umprogramaÇ
+Pra rodar um programa:
 - Ligar Winetricks
 - Run a Commandline shell
 - Vai para: ~/.wine/dosdevices/c:/Ants
@@ -161,8 +172,8 @@ x---------------x--------------------x
 ARDUINO
 sudo apt-get update  --> Updata a lista de repositorios
 sudo apt-get install arduino  --> instala o Arduino IDE
-sudo apt-get install arduino arduino-core  -> instala mais bagulhos
-sudo apt upgrade  --> Updata todo sw que jã' foi instalado! Inclusive o do Arduino
+sudo apt-get install arduino arduino-core  --> instala mais bagulhos
+sudo apt upgrade  --> Updata todo sw que ja' foi instalado! Inclusive o do Arduino
 
 --> So' que agora nao vai encontrar a porta serial pra programar o arduino!
 --> Tem que arrumar assim:
@@ -211,7 +222,7 @@ x---------------x--------------------x
 ALLIAS
 alias apt-search='apt-cache search'
 
-Pra ficar permanente, edutar esse arquivoÇ
+Pra ficar permanente, editar esse arquivo:
 ~/.bashrc    --->  e' onde esta definido o meu terminal!!
 
 E depois tem que dar:
@@ -253,7 +264,7 @@ x---------------x--------------------x
 CODEBLOCKS
 (tirado do site do mantenedor do Codebloks: http://www.edivaldobrito.com.br/instalar-ide-codeblocks-no-ubuntu/)
 
-Passo 2. Se ainda não tiver, adicione o repositório do programa com este comando
+Passo 2. Se ainda nao tiver, adicione o repositorio do programa com este comando
 sudo add-apt-repository ppa:damien-moore/codeblocks-stable
 
 Passo 3. Atualize o gerenciador de pacotes com o comando:
@@ -330,6 +341,34 @@ F7 --> Save + Build and Run (simula)
 
 
 
+X------------------X-------------------X
+KRUSADER
+
+--> Just install it using  Ubuntu Software...
+--> If you need to use it in SUDO mode:
+
+In Ubuntu 12.04 i386 Desktop I use this:
+1. Make shortcut for Krusader on desktop.
+2. Right click on shortcut and Properties
+3. Change field Command.
+Old value: krusader -caption "%c" %i
+New value: gksudo krusader
+4. Close
+
+This runs krusader in root mode all the time. A better fix in my opinion is:
+
+ --> Download and install kdesudo 
+
+ --> From within krusader:
+
+    Choose Settings -> Configure Krusader
+    In the pop-up box choose Dependencies
+    Under the General tab [which it defaults to], top line is kdesu.. in the blank space provided type: '/usr/bin/kdesudo' [without apostrophes]
+    Might have a couple pop-ups the first time you enable [letting you know what packages are enabled and what are not], #1 rule: "Don't panic!" just hit ok..ok etc.
+    Boom! you get the Root access window [when called], next time [you need root explorer] it won't have the previous warning/config messages.. so you are good to go. 
+
+
+
 
 x---------------x--------------------x
 		BILEKI'S GUIDE on How to prepare the SD Card on Linux    ---   
@@ -396,7 +435,7 @@ APPENDIX A: Network configuration for static IP (eg. Simoes room)
 	ping www.google.com
 		To test connection!
 
-	Dentro da USP as portas baixas são bloqueadas, então, caso esteja tentando conectar de um cabo de rede de dentro da USP, executar no terminal o comando:
+	Dentro da USP as portas baixas sao bloqueadas, entao, caso esteja tentando conectar de um cabo de rede de dentro da USP, executar no terminal o comando:
 	sudo nano /etc/ssh/sshd_config
 		---trocar de Port 22 pra Port 22000
 		
@@ -476,9 +515,9 @@ APPENDIX C - Static IP permanently after reboots
 
 - Write down the following information. . .
 
-	inet addr – 192.168.1.81 (Pi's Current IP Address)
-	Bcast –  192.168.1.255 (The Broadcast IP Range)
-	Mask –  255.255.255.0 (Subnet Mask Address)
+	inet addr 192.168.1.81 (Pi's Current IP Address)
+	Bcast 192.168.1.255 (The Broadcast IP Range)
+	Mask 255.255.255.0 (Subnet Mask Address)
 
 - We need a little more information before we proceed. Use the command. . . 
 
@@ -488,8 +527,8 @@ APPENDIX C - Static IP permanently after reboots
 
 - We need:
 
-	'Gateway' Address – 192.168.1.254
-	'Destination' Address – 192.168.1.0
+	'Gateway' Address 192.168.1.254
+	'Destination' Address 192.168.1.0
 
 	C. Editing Network Configuration
 
@@ -516,15 +555,15 @@ APPENDIX C - Static IP permanently after reboots
 
 - To clarify what each part means. . . . 
 
-address – The address you want to give your Pi, this can be any IP in the network range, but it's usually advisable to go higher rather than lower, or you could end up logging different devices to the same IP! I've selected 192.168.1.81, as we're already registered to that address (denoted by 'inet addr'), but this can be any IP address from the range192.168.1.1 to 192.168.1.255.
+address = The address you want to give your Pi, this can be any IP in the network range, but it's usually advisable to go higher rather than lower, or you could end up logging different devices to the same IP! I've selected 192.168.1.81, as we're already registered to that address (denoted by 'inet addr'), but this can be any IP address from the range192.168.1.1 to 192.168.1.255.
 
-netmask – The 'Mask' address we wrote down earlier.
+netmask = The 'Mask' address we wrote down earlier.
 
-network – The router IP address, this is the 'Destination' Address was found earlier. You can also grab this off your router, it will say on the side somewhere.
+network = The router IP address, this is the 'Destination' Address was found earlier. You can also grab this off your router, it will say on the side somewhere.
 
-broadcast – The 'Bcast' address we wrote down earlier. 
+broadcast = The 'Bcast' address we wrote down earlier. 
 
-gateway – This is the 'Gateway' address we found earlier.
+gateway = This is the 'Gateway' address we found earlier.
 
 - So, it should look something like the above, but with your values! Remember to save before exit, CTRL+X (exit) then yes to save changes!
 
@@ -622,9 +661,10 @@ X------------------X-------------------X
 	e)Compile your project. Whenever your new scripts are on the path they will override whatever the makefile says.
 
 	gcc --help
-	gcc --target-help             -->  Help com parâmetros de otimização como o march
+	gcc --target-help             -->  Help com parametros de otimizacao como o march
 - Se botar -v  na linha de comando pra compilar, ele da um monte de mensagems dizendo tudo que ta fazendo!!
-	- Assim pode-se conferir se pegou os parâmetros do Arm7
+	- Assim pode-se conferir se pegou os parametros do Arm7
 	
+
 
 
