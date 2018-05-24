@@ -99,6 +99,41 @@ chmod +x *   --> Troca de todos os files na pasta
 
 
 x---------------x--------------------x
+FORMATAR PENDRIVE
+
+List your block storage devices by issuing the command:
+lsblk
+
+	Then identify your pen drive by it's SIZE. In my case its /dev/sdb
+
+Erase everything in the pen drive (OPTIONAL):
+	sudo dd if=/dev/zero of=/dev/sdb bs=4k && sync  
+	--> Replace /dev/sdb with your corresponding device. This will take some time. It will pretend to stuck. Just be patient.
+
+Make a new partition table in the device:
+sudo fdisk /dev/sdb
+
+	Then press letter o to create a new empty DOS partition table.
+
+	Make a new partition:
+	Press letter n to add a new partition. You will be prompted for the size of the partition. Make a primary partition when prompted, if you are not sure.
+
+	Then press letter w to write table to disk and exit.
+
+Format your new partition.
+
+	See what is your new partition with a command
+	lsblk     --> In my case it is /dev/sdb1
+
+	Issue the command below to format the new volume:
+	sudo mkfs.vfat /dev/sdb1  
+
+Eject the device:
+ sudo eject /dev/sdb
+
+
+
+x---------------x--------------------x
 ENCRIPITAR
 
 gpg -c historico.txt   -->  -c pra encripi
