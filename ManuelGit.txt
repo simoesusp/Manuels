@@ -46,7 +46,7 @@ Pode fazer por SSH -->
 			--> COPIA o caminho: git@github.com:simoesusp/Arduino-Projects.git
 
 	CLONA COM:
-		git clone Clone with SSH git@github.com:simoesusp/Arduino-Projects.git
+		git clone git@github.com:simoesusp/Arduino-Projects.git
 
 	--> Dai' sempre que fizer PUSH, ele vai usar a chave SSH que foii criada! E nao vai mais pedir a senha!!!
 

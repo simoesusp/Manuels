@@ -43,10 +43,6 @@ mkdir  NOMEDAPASTA   --> Cria pasta
 
 
 
-
-GIT do Principia: http://principia.icmc.usp.br/redmine
-
-
 x---------------x--------------------x
  LINE EDITING
 
