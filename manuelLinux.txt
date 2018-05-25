@@ -150,7 +150,30 @@ ENCRIPITAR
 
 gpg -c historico.txt   -->  -c pra encripi
 rm historico.txt       --> E' bom remover o antigo
-gpg historico.txt.gpg  --> Pra desencripitar
+gpg historico.txt.gpg  --> Pra desencripitar  --> Sem o -d ele tipo ... adivinha que e' pra desencripitar.
+						--> o certo e' incluir -d,mas assim o retardado outputa na tela !!
+						--> Pra outputar pro arquivo, usar: --output ${1%.gpg}
+
+CUIDADO!!!  Assim ele guarda a senha no KEYRING.
+Pra nao guardar,usar: --no-symkey-cache
+	--> Mas so' tem esse argumento na VERSAO: 2.2.7, que NAO e' a padrao do UBUNTU 18. 
+	--> Pode baixar dosite: https://www.gnupg.org/download/index.html  e recompilar, tendo que reinstalar 5 libraries
+	--> Ou baixar do github do simoes ja' pronto pro UNBUNTU:  
+  
+function enc(){ 
+  gpg -c --no-symkey-cache "$1" && rm "$1"   # -c pra encripitar
+  ls
+  }
+
+function dec(){ 
+  gpg --output ${1%.gpg} -d "$1" && rm "$1"   #  -d pra desencripitar
+  ls
+  }
+
+--> Assim ainda fica reclamando que: gpg-agent' is older than us (2.2.4 < 2.2.7)
+--> Da' pra incluir [2> /dev/null]  no final pra calar a boca!!!
+--> ex.: gpg --output ${1%.gpg} -d "$1" 2> /dev/null
+
 
 
 x---------------x--------------------x
@@ -171,6 +194,9 @@ Pra rodar um programa:
 
 x---------------x--------------------x
 ARDUINO
+
+LIBRARIES: /home/simoes/sketchbook/libraries/
+
 sudo apt-get update  --> Updata a lista de repositorios
 sudo apt-get install arduino  --> instala o Arduino IDE
 sudo apt-get install arduino arduino-core  --> instala mais bagulhos
@@ -191,6 +217,23 @@ ls -l /dev/ttyUSB0
 sudo usermod -a -G dialout simoes     --> onde simoes e' seu username !!
 --> Tem que se deslogar e logar novamente pra fazer essas mudancas!!
 
+
+ISSO NAO RESOLVE NO Ubuntu 18.04, pois da' pau no JAVA!
+==> Fica dando essa mensagem quando abre o arduino: java.lang.NullPointerException thrown while loading gnu.io.RXTXCommDriver
+
+--> Instalar Java:
+apt-get install openjdk-8-jre
+
+--> On a newly installed Ubuntu 18.04 LTS system. After installing Oracle java 8:
+
+$ sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt update
+$ sudo apt install oracle-java8-set-default
+
+DAi' FUNCIONOU!!!
+
+-------------x---------
+
 --> Ver todos os grupos eos users que pertencem a eles:
 cat /etc/group
 
@@ -201,6 +244,8 @@ cat /etc/group
 	Now plug the arduino board into an USB port
 	Run command "dmesg" in the console (no need to do this as root this time )
 	--> Isso mostra tudo que acontece na maquina... Vai mostrar o mapeamento da USB
+	--> Pra nao precisar limpar o log, tente:
+	dmesg -w     --> Muito Legal!  Fica monitorando  a partir de agora tudo que acontece!!
 
 
 x---------------x--------------------x
@@ -343,7 +388,22 @@ Criar arquivo " buildandrun " na pasta /user/bin   com o seguinte:
 Obs.: 	&&  faz rodar as duas linhas, mas so'  se a primeira rodar!
 		$1  ... $3  Sao os argumentos passados
 
-Cuidado:  ocharmap.mif tem qque estar na mesma pasta do ASM
+COPIAR: montador, sim, buildandrun    para a pasta /usr/bin/
+	--> Nao esqueca de verificar se tem permissao de EXECUTAR cada um dos tres programas:
+ls -l  montador     --> Mostra as permissoes!
+-rw-r--r-- 1 root root 48147 mai 25 08:42 montador    
+	--> Da pra ver que nao tem permissao de executar [x]
+
+sudo chmod +x /montador
+ls -l  montador
+-rwxr-xr-x 1 root root 48147 mai 25 08:42 /bin/montador
+	--> Agora incluiu o [x]
+
+sudo chmod +x /sim
+sudo chmod +x /buildandrun 
+
+
+Cuidado:  o charmap.mif tem que estar na mesma pasta do ASM
 
 No Sublime vai colorir a sintaxe e pra montar e simular:
 Shift+Ctrl+B  -->  Builda do asm -> mif
