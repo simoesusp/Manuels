@@ -19,6 +19,12 @@ ex.: [1]+  Stopped                 ping -c3 www.google.com
 
 fg        -->   Reinicia os jobs Pausados
 
+which gpg   -->   Diz qual e' o arquivo do programa que esta' rodando
+			-->   Resulta em:	/usr/local/bin/gpg
+
+Listar os processos rodando: 
+	ps aux
+	kill -9 5313   --> mata o processo 5313
 
 sudo halt
 sudo reboot
@@ -254,6 +260,7 @@ sudo add-apt-repository ppa:graphics-drivers
 sudo apt-get update
 
 sudo apt-get install nvidia-390     -->> Pegar a ultima versao que aparece na lista apos o apt- do repositorio
+									-->> as versoes 380, 390... sao as mais debugadas... Nao pegar as 391, 392...
 
 Pra ver se instalou:
 lsmod | grep nvidia  -->> isso lista os modulos procurando por referencias dos drivers isntalados

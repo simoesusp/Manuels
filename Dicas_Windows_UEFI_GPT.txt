@@ -1,0 +1,250 @@
+****************
+A) Pra formatar o HD no formato GPT:
+
+Open the command prompt with Shift+F10, but this time run diskpart. Use "list disk" to see all the disks on your computer, and type "select disk n" to select the disk with number n that you're going to install Windows to (usually 1). Type "clean" to clear the partition table, then run "convert gpt" to create a GPT partition table. Once that's done, close the command prompt and start the install process. When prompted for the disk to install to, choose the one that you just created a GPT partition table on. If no yellow exclamation mark warning appears, the installer will install Windows in EFI mode, creating the necessary EFI partitions and add the necessary bootloader entry to the EFI's NVRAM.
+
+--> Eu, na verdade, fiz ate' o CLEAN e voltei para o instalador do windows e entao mandei instalar o Windows em 200Gb sobre os setores nao alocados!
+
+O windows criou sozinho:
+a) Uma particao ESP-EFI FAT32 com 100Mb
+b) Uma particao MSR de uns 200Mb
+c) Uma particao de 200Gb NTFS para o Windows
+
+
+****************
+B) Pra fazer um PenDrive com o Windows Installer em EFI-GPT :
+
+1) Format um PenDrive como FAT32
+
+2) Arrange uma copia do   bootmgfw.efi. You can obtain this from an install of 64-bit Windows 7 - look in C:\Windows\Boot\EFI. 
+
+3) Arrume uma ISO do wINDOWS 7. E copie todos os arquivos pro penDrive.
+
+4) In the root of your USB drive, there is the \efi\microsoft\boot directory. Copy this directory one level up so the files also reside under \efi\boot.
+
+5) Copy the bootmgfw.efi file to \efi\boot, and rename it to bootx64.efi.
+
+That's it! No need to write boot sectors or anything like that - as long as you have a FAT32 filesystem with a \efi\boot\bootx64.efi file, the computer should pick that up and start booting. 
+
+==> Bootar na Opcao UEFI-Pendrive da BIOS-UEFI da Mother Board (F8) ou Del pro SETUP
+
+
+
+*****************
+C) Instalar o Windows e depois o Linux:
+
+Quando selecionar "Something Else" no Ubunto installer no Drop-menu bem embaixo de ONDE deve por o  grub.efi bootloader, marque o sda1, que e' a particao ESP=EFI que ja' tem o Windows Loader (100Mb de FAT32).
+
+Esta particao e' a /dev/sda1   --> EFI partition
+Ele vai fazer o dir /EFI/ubuntu/grubx64.efi ==> Este e' o bootloader do Linux
+
+--> Nao esquece de colocar uma particao de SWAP de pelo menos o tamanho da memoria (8Gb), senao ele nao HIBERNA!!!!!!
+
+
+*****************
+D) Fazer o Menu do Grub (se bootar no Linux e tiver estragado o Windows Loarder): 
+
+Find where the windows bootloader resides by mounting the efi partition (sudo mount /dev/sda1 /mnt).
+Deve ter as subpastas /EFI/Microsoft/Boot/bootmgfw.efi    e     /EFI/ubuntu/grubx64.efi
+
+Se nao Tiver o diretorio e o arquivo da Microsoft, tem que criar:
+vai ate' o EFI: 
+
+cd mnt
+cd EFI
+mkdir Microsoft
+mkdir Boot
+cp /Home/Desktop/bootmgfw.efi   --> copiar este arquivo de um Windows instalado: C:\Windows\boot\efi
+
+
+--> Isso nao vai funcionar sozinho, tem que criar o BCD store, como indicado abaixo (F)!
+
+==> Todos os outros comandos pra criar o menu do GRUB2 nao funcionaram!!!! Unica alternativa e' o rEFInd do item E abaixo!!!
+
+
+
+
+****************
+E) Alternativa pro Menu Grub (Isso deu muito certo... Mas nao funcionou para o windows, pois ainda tinha que criar a store!): 
+
+rEFInd, which is an updated version of rEFIt with fixes for the various UEFI glitches and extensions to work with a 3.3.0 kernel's built-in EFI boot loader. Note that I forked/maintain rEFInd.
+==> http://www.rodsbooks.com/refind/
+
+=====>  Isso funcionou maravilhosamente no Ubuntu13, mas da segunda vez nao criou a opcao de bootar do REFIND na Bios da Mother Board ver abaixo como fazer isso (Item H)!!!
+
+
+
+
+***************
+F) Para concertar o Boot do Windows (bootando do pen drive do Windows:
+BCDboot C:\Windows /s S:
+
+Onde C: e' o disco onde o Windows esta' instalado. E S: é a letra da Particao EFI.
+
+--> Pena que isso nao funcionou da primeira vez! So' copiou os arquivos, mas nao pode criar a store !!
+--> Deu o Erro: BFSVC: Failed to create a new system store. Status = [c000003a]
+
+==> Se nao encontrar a particao ESP-EFI, tem que associar uma letra a ela!
+a) Bootar do pendrive do windows
+b) com Shift-F10 entrar no command prompt
+c) chamar diskpart
+d) listar os volumes: list volume    ==> Vai aparecer as letras das particoes a que importa e' a FAT32 100Mb
+e) se estiver sem letra: 
+	select disk 0
+	select partition 1
+	assign letter=s        ==> vai assignar a letra s a particao!
+
+f) Tentar entao : BCDboot C:\Windows /s S:
+
+
+====> Se ainda assim nao der, usar o pendrive do Windows e REPARAR ! 
+	Usar Reparar Inicializacao !!
+
+	--> Tem que ser EXATAMENTE o mesmo pendrive com o qual o windows foi instalado para funcionar!!!
+
+
+
+
+
+**************
+G) Para criar uma opcao de Boot para o Linux na Flash da UEFI BIOS da Placa Mae no Ubuntu caso so' boote no Windows:
+
+--> E' preciso bootar com um pendrive do Ubuntu e usar o comando (Se nao der certo no Ubuntu 13, tentar Ubunto 11.10 - Item H):
+# efibootmgr -c -l /EFI/ubuntu/grubx64.efi -L "Ubuntu64"
+
+--> Depois, testar se o menu foi criado com: # efibootmgr    --> Vai listar as opcoes de Boot
+
+--> Funcionou perfeitamente no Ubuntu11.10  Mas tive que instalar o comando antes com: apt-get efiboomgr
+==> Isso NAO FUNCIONOU no Ubuntu13 !!!!  Deu pobrema com as EFIVAR: # efivar -l     -->   efivar command not found !!!!
+
+--> Para criar a chamada (se funcionar o efibootmgr) para o menu do rEFInd se ele ja' tiver sido instalado no Ubuntu: # efibootmgr -c -l /EFI/refind/refind_x64.efi -L "rEFInd"
+
+--> Tem uma variacao indicando o a particao no disco (redundante pois e' o default!!): # efibootmgr -c -d /dev/sdX -p Y -l /EFI/ubuntu/grubx64.efi -L "Ubuntu64"
+Onde: sdx = sda             e -p Y = -p 1      para a particao EFI ESP na sda1
+
+
+--> Se nao funcionar, tentar assim: # efibootmgr -c -l '\efi\refind\refind_x64.efi' -L "rEFInd"
+
+==> Isso NAO FUNCIONOU no Ubuntu13 !!!! Da' pra deletar as chamadas com efibootmgr -b 4 -B  (onde 4 e' o nr. da entrada), mas nao da' pra criar novas!!
+==>  Deu pobrema com as EFIVAR: # efivar -l     -->   efivar command not found !!!!
+
+
+
+
+
+***********
+H) Criar uma opcao de Boot na Flash da UEFI BIOS da Placa Mae no Linux: Funcionou no Ubuntu11.10!!!!!!!
+
+0) Bootar no pendrive Linux Ubuntu11.10 e entrar no Live-testar Ubuntu
+1) chamar terminal: Ctrl-Alt-T
+2) sudo su
+3) cd boot
+4) mkdir efi
+5) mount /dev/sda1 /boot/efi
+6) Testar com: ls /boot/efi/EFI/
+7) TEstar se tem o efibootmgr: # efibootmgr --> Lista as opcoes de boot
+8) Se nao tiver instalado,  Instalar o efibootmgr com: apt-get efibootmgr   --> Tem queconfigurar a rede antes!!!
+9) # efibootmgr -c -l '\efi\ubuntu\grubx64.efi' -L "Ubuntu64"   --> Pra criar a opcao de bootar no Ubuntu13
+10) # efibootmgr -c -l '\efi\refind\refind_x64.efi' -L "rEFInd"  --> Se ja' tiver instalado o rEFInd no Ubuntu13
+11) E' possivel deletar as chamadas com efibootmgr -b 4 -B  (onde 4 e' o nr. da entrada)
+
+
+
+
+
+
+
+
+
+*************
+APENDICE A: OPCOES DO EFIBOOTMGR
+
+usage: efibootmgr [options]
+	-a | --active         sets bootnum active
+	-A | --inactive       sets bootnum inactive
+	-b | --bootnum XXXX   modify BootXXXX (hex)
+	-B | --delete-bootnum delete bootnum (hex)
+	-c | --create         create new variable bootnum and add to bootorder
+	-d | --disk disk      (defaults to /dev/sda) containing loader
+	-e | --edd [1|3|-1]   force EDD 1.0 or 3.0 creation variables, or guess
+	-E | --device num     EDD 1.0 device number (defaults to 0x80)
+	-g | --gpt            force disk w/ invalid PMBR to be treated as GPT 
+	-H | --acpi_hid XXXX  set the ACPI HID (used with -i)
+	-i | --iface name     create a netboot entry for the named interface
+	-l | --loader name    (defaults to \elilo.efi)
+	-L | --label label    Boot manager display label (defaults to "Linux")
+	-n | --bootnext XXXX  set BootNext to XXXX (hex)
+	-N | --delete-bootnext delete BootNext
+	-o | --bootorder XXXX,YYYY,ZZZZ,...     explicitly set BootOrder (hex)
+	-O | --delete-bootorder delete BootOrder
+	-p | --part part       (defaults to 1) containing loader
+	-q | --quiet           be quiet
+	--test filename   don't write to NVRAM, write to filename
+	-t | --timeout seconds   Boot manager timeout
+	-T | --delete-timeout    delete Timeout value
+	-u | --unicode | --UCS-2  pass extra args as UCS-2 (default is ASCII)
+	-U | --acpi_uid XXXX    set the ACPI UID (used with -i)
+	-v | --verbose         print additional information
+	-V | --version         return version and exit
+	-w | --write-signature  write unique sig to MBR if needed
+        -@ | --append-binary-args   append extra variable args from
+			   	    file (use - to read from stdin).  
+
+
+Typical usage:
+1) Root can use it to display the current Boot Manager settings.
+  [root@localhost ~]# efibootmgr
+  BootCurrent: 0004
+  BootNext: 0003
+  BootOrder: 0004,0000,0001,0002,0003
+  Timeout: 30 seconds
+  Boot0000* Diskette Drive(device:0)
+  Boot0001* CD-ROM Drive(device:FF) 
+  Boot0002* Hard Drive(Device:80)/HD(Part1,Sig00112233)   
+  Boot0003* PXE Boot: MAC(00D0B7C15D91)               
+  Boot0004* Linux
+
+  This shows:
+  BootCurrent - the boot entry used to start the currently running
+  system.
+
+  BootOrder - the boot order as would appear in the boot manager.  The
+  boot manager tries to boot the first active entry on this list.  If
+  unsuccessful, it tries the next entry, and so on.
+
+  BootNext - the boot entry which is scheduled to be run on next boot.
+  This superceeds BootOrder for one boot only, and is deleted by the
+  boot manager after first use.  This allows you to change the next boot
+  behavior without changing BootOrder.
+
+  Timeout - the time in seconds between when the boot manager appears
+  on the screen until when it automatically chooses the startup value
+  from BootNext or BootOrder.
+
+  Five boot entries (0000 - 0004), the active/inactive flag (* means
+  active), and the name displayed on the screen.
+
+
+2) An OS installer would call 'efibootmgr -c'.  This assumes that
+   /boot/efi is your EFI System Partition, and is mounted at /dev/sda1.
+   This creates a new boot option, called "Linux", and puts it at the top
+   of the boot order list.  Options may be passed to modify the
+   default behavior.  The default OS Loader is elilo.efi.
+
+3) A system administrator wants to change the boot order.  She would
+   call 'efibootmgr -o 3,4' to specify PXE boot first, then Linux
+   boot.
+
+4) A system administrator wants to change the boot order for the next
+   boot only.  She would call 'efibootmgr -n 4' to specify that the
+   Linux entry be taken on next boot.
+
+5) A system administrator wants to delete the Linux boot option from
+   the menu.  'efibootmgr -b 4 -B' deletes entry 4 and removes it
+   from BootOrder.
+
+
+
+
+
+
