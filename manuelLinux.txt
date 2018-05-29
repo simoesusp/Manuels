@@ -53,6 +53,16 @@ sudo rm -r NOMEDAPASTA  --> Remove a pasta (-r  =>  recursivamente)
 mkdir  NOMEDAPASTA   --> Cria pasta
 
 
+x---------------x--------------------x
+MOUNT ISO:
+EX.: Monte a ISO do Microsoft Office e instale normalmente:
+
+	$ sudo mkdir /mnt/cdrom
+	$ sudo mount -o loop -t iso9660 /Microsoft-Office-2007.iso /mnt/cdrom/
+	$ wine /mnt/cdrom/setup.exe
+
+--> Pra DESMONTAR:  (note que os retardado usam umount, ao inves de UNmount como eu tava tentando adivinhar!!!)
+sudo umount /mnt/cdrom
 
 x---------------x--------------------x
  LINE EDITING
@@ -148,6 +158,22 @@ Format your new partition.
 
 Eject the device:
  sudo eject /dev/sdb
+
+
+x---------------x--------------------x
+FORMATAR PARTICAO DO HD
+
+	See what is the partitions with command:
+	lsblk     --> In my case it is /dev/sda3
+
+	Issue the command below to format the new volume:
+	sudo mkfs.ext4 /dev/sda3
+
+	Monta a particao em uma pasta:
+	sudo mount /dev/sda3 /windows
+
+	Da permissao para todo mundo escrever e ler da particao:
+	sudo chmod 777 -R /windows
 
 
 
@@ -747,3 +773,48 @@ X------------------X-------------------X
 
 
 
+--------------------x--------------------------x---------------------------
+
+ERRORS ENCONTRADOS NO UBUNTU18.04 so far:
+
+1) Diz que esta' desatualizado:
+language-selector-common, language-selector-gnome, x11-xkb-utils
+
+Solucao:
+	simoes@LapFran:~$ sudo apt-get update
+
+	simoes@LapFran:~$ sudo apt-get upgrade
+
+	Reading package lists... Done
+	Building dependency tree       
+	Reading state information... Done
+	Calculating upgrade... Done
+	The following packages will be upgraded:
+	  debhelper language-selector-common language-selector-gnome linux-firmware
+	  python3-distupgrade python3-software-properties software-properties-common
+	  software-properties-gtk ubuntu-release-upgrader-core
+	  ubuntu-release-upgrader-gtk x11-xkb-utils
+
+	Unpacking x11-xkb-utils (7.7+3ubuntu0.18.04.1) over (7.7+3) ...
+	Setting up x11-xkb-utils (7.7+3ubuntu0.18.04.1) ...
+	Processing triggers for desktop-file-utils (0.23-1ubuntu3) ...
+	Setting up language-selector-common (0.188.1) ...
+	Processing triggers for libglib2.0-0:amd64 (2.56.1-2ubuntu1) ...
+	Processing triggers for libglib2.0-0:i386 (2.56.1-2ubuntu1) ...
+	Processing triggers for man-db (2.8.3-2) ...
+	Processing triggers for shared-mime-info (1.9-2) ...
+	Setting up python3-software-properties (0.96.24.32.3) ...
+	Processing triggers for gnome-menus (3.13.3-11ubuntu1) ...
+	Processing triggers for dbus (1.12.2-1ubuntu1) ...
+	Setting up language-selector-gnome (0.188.1) ...
+	Processing triggers for hicolor-icon-theme (0.17-2) ...
+	Setting up linux-firmware (1.173.1) ...
+	Setting up python3-distupgrade (1:18.04.18) ...
+	Setting up software-properties-common (0.96.24.32.3) ...
+	Setting up ubuntu-release-upgrader-core (1:18.04.18) ...
+	Setting up software-properties-gtk (0.96.24.32.3) ...
+	Setting up ubuntu-release-upgrader-gtk (1:18.04.18) ...
+	
+
+Error in POL_Wine_InstallVersion
+Unable to find version: 1.8-staging
