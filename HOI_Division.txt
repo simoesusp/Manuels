@@ -1,0 +1,774 @@
+﻿THIS IS JUST A COLLECTION OF A LOT OF STUFF I GOT FROM FORUNS ... pLUS MY OWNN IDEAS!
+IT IS HERE FOR MY OWN USE ONLY... 
+
+
+
+
+===> PURGE USSR : 14 JULY 1937
+
+
+
+
+C:\Users\Simoes\Documents\Paradox Interactive\Hearts of Iron IV\
+
+3=00/-https://www.youtube.com/watch?v=egRnEaL6J4U&list=PL59WssMEDO9tSYlDWESvgw3N0sgOProB4#t=1397.114251
+
+http://www.hoi4wiki.com/Hearts_of_Iron_4_Wiki
+
+https://forum.paradoxplaza.com/forum/index.php?threads/beginners-guide-to-unit-types-division-design.942449/page-11
+
+https://forum.paradoxplaza.com/forum/index.php?threads/summary-of-ger-strategies.947331/
+
+https://forum.paradoxplaza.com/forum/index.php?threads/air-mechanics-combat-mission-quick-guide.947290/
+
+https://drive.google.com/file/d/0BzLOehWwWQepZ3dKU2M2amxGbE0/view
+
+https://forum.paradoxplaza.com/forum/index.php?threads/germany-1936-aar-1-2-1-veteran-historical-ai-no-battleplans-aka-50-bonus-to-ai.943040/page-3
+
+https://docs.google.com/spreadsheets/d/18Q9Pn5mnX64WwuAp9SRacXQtWMVc_SmSYLm9MX3eRws/edit#gid=0
+
+https://docs.google.com/spreadsheets/d/1tHyHaS3X4rYpXJY_glBzPWxJgz3oyFKq9aLVNbba1JY/edit#gid=511359213
+
+
+
+
+
+
+
+
+--------------------------x------------------------x------------------------x---------------------------x------------------------x	
+Unit 				1936 (base)	 			1939 					1942	 				1945
+Engineers 			+5 Entrenchment			+2 Entrenchment			+2 Entrenchment			+2 Entrenchment
+Terrain bonuses:							+10% Attack and Defense on forts
+																	+10% Attack and Defense on rivers+
+																							10% Attack and Defense on urban
+
+Recon 				+1 Reconnaissance		+2 Reconnaissance		+2 Reconnaissance		+2 Reconnaissance
+					+10% Speed apart from urban and desert
+
+Military Police 	+20% Suppression Bonus 	+10% Suppression Bonus 	+10% Suppression Bonus 	+10% Suppression Bonus
+
+Maintenance 		+5% Reliability 		+5% Reliability 		+5% Reliability 		+5% Reliability
+
+Field Hospital 		+20% trickleback   		+10% Trickleback		+10% Trickleback		+10% Trickleback
+					−10% XP loss 			−10% XP loss			−10% XP loss			−10% XP loss
+
+Logistics 			−10% Supply Usage 		−10% Supply Usage 		−10% Supply Usage 		−10% Supply Usage
+
+Signal 				+20% Initiative 		+12% Initiative 		+12% Initiative 		+12% Initiative 
+
+
+
+
+
+--------------------------x------------------------x------------------------x---------------------------x------------------------x	
+
+Recon				Infantry	Infantry	Infantry	Infantry	None
+Engineers			Infantry	Infantry	Infantry	Infantry	None
+Logistics Company	Infantry	Infantry	Infantry	Artillery	None
+Maintenance Company	Infantry	Infantry	Infantry	None		None
+Signal Company		Artillery	Artillery	Artillery	None		None
+
+
+BEST EVER!!!  a lot of OVERRUN !!!!
+Recon				MEC 	MEC	MARM	MARM	MARM
+Engineers			MEC	MEC	MARM	MARM	MARM
+Logistics Company	MEC	MEC	MARM	MARM	None
+Maintenance Company	MEC	None	MARM	MARM	None
+Signal Company		MEC	None	MARM	MARM	None
+
+
+Chip and Very powerfull !!!!
+Signal Company		Infantry	Infantry	HARM	None	None
+Engineers			Infantry	Infantry	None	None	None
+Logistics Company	Infantry	Infantry	None	None	None
+Suport Art			Infantry	Artillery	None	None	None
+Suport Anti-Tank	Infantry	Artillery	None	None	None
+
+
+
+DIVISIONS
+
+40W -> 	Mass Assault: 25X INF + (Hos + Eng + Rec + Init + Log) 
+	
+	Normal: 13X INF + 4X ART + 3X AT + (Eng + Rec + Init + Log + Hos) 
+
+10W -> 	Fast (12kM/h) -> 3X LARM + 2X MOT + (Eng + Rec + SART + SROCK + SAT)
+	Fast (10kM/h) -> 3X ARM  + 2X MEC + (Eng + Rec + SART + SROCK + SAT)
+
+Lento (4,5kM/h) -> 
+	HARM + INF  + INF + INF + INF + (Eng + Rec + SART + SROCK + SAT) 
+	HSP-ART + ART + INF + INF     + (Eng + Rec + SART + SROCK + SAT)
+	HARM + HARM + INF + INF + INF + (Eng + Rec + SART + SROCK + SAT)
+	HSP-ART + HSP-ART + INF + INF + (Eng + Rec + SART + SROCK + SAT)
+
+Fast (10kM/h) -> 
+	ARM + MEC  + MEC + MEC + MEC + (Eng + Man + SART + SROCK + SAT) 
+	SP-ART + SP-ART + MEC + MEC  + (Eng + Man + SART + SROCK + SAT)
+	ARM + ARM + MEC + MEC + MEC  + (Eng + Man + SART + SROCK + SAT)
+
+Lento (4,5kM/h) -> 
+20W -> 	2X ART + 7X  INF 	+ (Eng + Log + SART + SROCK + SAT)
+	2X HARM + 8X  INF 	+ (Eng + Log + SART + SROCK + SAT)
+	2X ART + HARM + 6X INF 	+ (Eng + Log + SART + SROCK + SAT)
+	
+	1X HSP-ART + 3X ART + 4X INF + (Eng + Log + SART + SROCK + SAT)
+	2X HSP-ART + 7X INF          + (Eng + Log + SART + SROCK + SAT)
+	HSP-ART + ART + 7X INF       + (Eng + Log + SART + SROCK + SAT)
+
+	2X HSP-ART + 1X HSP-TD + 6X INF  + (Eng + Man + Init + Log + Hos) 
+40W ->	4X HSP-ART + 2X HSP-TD + 12X INF + (Eng + Man + Init + Log + Hos) 
+
+Fast (10kM/h) -> 
+20W ->	3X ARM + 2X SP-ART + 4X MEC    + (Eng + Rec + Init + Log + Man)
+40W -> 	4X SP-ART + 2X SP-TD + 12X MEC + (Eng + Hos + Init + Log + Man) 
+
+Modern Arm (Fast (10Km/H))->
+10W -> 	3X  MARM + 2X MEC + (Eng + Man + SART + SROCK + SAT)
+20W -> 	6X  MARM + 4X MEC + (Eng + Man + SART + SROCK + SAT)
+	6X  MARM + 4X MEC + (Eng + Rec + Init + Log + Man)
+40W -> 	12X MARM + 8X MEC + (Eng + Rec + Init + Log + Man)
+
+
+
+
+
+
+
+
+--------------------------x------------------------x------------------------x---------------------------x------------------------x	
+
+I am late, so I'll keep this short: Here is a brief guide where I try to explain all units and what they are useful for.
+
+Abbreviations:
+DEF - Defence - Used to deflect attacks when defending.
+BRK - Breakthrough - Used to deflect attacks when attacking.
+SA - Soft Attack - Used to attack soft targets.
+HA - Hard Attack - Used to attack hard targets.
+HARD - Hardness - Used to define how many % of the SA and HA of an enemy will actually be used against this division.
+ARM - Armor - Average thickness of the armor for the division. If enemy can't pierce you deal extra damage and take less.
+PIER - Pierce - Used to penetrate Armor, if you can't pierce your enemy, he will suffer less damage and he will deal more
+SPD - Speed - Determines how fast the unit can move. High Speed gives a bonus to reinforce chance in combat.
+MP - Manpower - How many men you need.
+SUP - Supression - Used to keep partisan resistance in check.
+REC - Recon - Used to determine which side has the initative, which gives a better chance to pick a good tactic.
+
+- - - - - - - - -
+
+Infantry (INF) - Your basic combat unit. High DEF, but low stats otherwise - Use as main body for your army.
+
+Mountaineer (MTN) - Slightly better BRK than INF, but also much more costly - Use these for mountain warfare.
+
+Paratroopers (PAR) - Weak stats and limited in terms of design options - Use them to snatch provinces to delay an enemy or cut him off.
+
+Artillery (ART) - Very high SA, decent BRK, excellent firepower per frontage - Use them to increase your division's SA and offensive capacity.
+
+Anti-Tank (AT) - High HA and PRC - Use them to counter enemy tank divisions.
+
+Anti-Air (AA) - High Air Attack, decent HA, minor PRC - Use them to shoot down enemy air units that attack in combat and get a bit of extra HA against enemy tanks, particularly LARM.
+
+Rocket Artillery (R-ART) - High SA, decent BRK, excellent firepower per frontage. Almost the same as ART, but slightly better at offense - Use them to increase your division's SA and offensive capacity.
+
+Cavalry (CAV) - Good SPD, high SUP, subpar stats - Weak and more costly version of INF that's faster and better at garrision duty - Use them to supress partisans.
+
+Motorized (MOT) - High SPD- Faster version of INF - Use them to provide ORG for your tanks or for fast encirclement moves.
+
+Mechanized (MECH) - High Hardness, good stats, high HA. Much stronger stats than MOT, but also way more costly and much slower - Use them to provide ORG for your MARM and HARM or to create semi-armored attack divisions.
+
+Light Armor (LARM) - High SPD, high hardness, good BRK, low DEF, ARM, HA and PIER. Very low ORG. Weak against enemy armor - Use them for fast exploit divisions, to add BRK and a bit of ARM to your combat units or as breakthrough units against inferiour enemies.
+
+Medium Armor (MARM) - Good SPD, High hardness, good ARM and PIER, balanced DEF/BRK and SA/HA, but low SA per IC cost. Very low ORG - Use them as Breakthrough units and to counter other LARM and MARM.
+
+Heavy Armor (HARM) - Very high hardness, ARM, PIER and HA. Low SA per IC cost. Rather low SPD. Very low ORG - Use these to counter enemy tanks if you have too much IC for some reason.
+
+Super Heavy Armor (SHARM) - Extreme Hardness, ARM, PIER and HA. Low SPD. Very low ORG. Insane IC cost - Use these if you are a maniac for whom HARM wouldn't drain enough ressources.
+
+Self Propelled Artillery (SP-ART) - Extreme SA, terrible HA, bad BRK, okay DEF, lower hardness, ARM and PIER. Trade stats for SA. Excellent firepower per frontage - Use these to give your tank divisions a big boost against soft targets.
+
+Tank Destroyer (TD) - Good HA and PIER, terrible SA, bad BRK, okay DEF. Trade stats for HA and PIER. Rather low HA difference to regular armor - Use these to counter enemy tanks of a higher class (LARM -> MARM, MARM -> HARM) or better tech level.
+
+Self Propelled Anti-Air (SP-AA) - Mediocre AA. Bad DEF, BRK, ARM, HARD, SA, HA. Trades stats for AA - Don't use them - they are terrible.
+
+Self Propelled Rocket Artillery (SP-R-ART) - High SPD and SA, decent BRK, excellent firepower per frontage. Lower ARM and HARD than SPART, but muchcheaper. An excellent way to add firepower to motorized divisions and a cheap way to add firepower to armored designs.
+
+Engineer (ENG) - Better dig-in, better SPD and defence for some terrain, better attack for invasions. Later models increase dig-in significantly and give minor benefits for fort, river and urban combat - Use these to make your units significantly stronger at defence, particularly when defending a river. Remember that dig-in does boost ALL stats (and not just DEF) of a unit.
+
+Recon (REC) - Better SPD in difficult terrain. Provides REC. Later models provide more REC - Use them to make your units a bit faster and pick better tactics slightly more often. Seems more important when your leaders are inferior (or just on par) to the enemy.
+
+Military Policy (MP) - Improves SUP. Later models improve SUP bonus - Use these to supress partisans more efficiently.
+
+Maintenance (MAIN) - Improved Reliability. Reduces equipment losses (including attrition and training). Later models increase reliability - Use these with your most costly divisions to reduce equipment losses.
+
+Field Hospital (HOS) - Grants trickleback (returns some MP losses to your pool) and lower XP loss from combat losses. Later models improve trickleback and XP loss reduction - Use these to preserve precious manpower and boost XP gain from combat.
+
+Logistics (LOG) - Reduces Supply Usage - Later models reduce usage further - Use these to reduce your supply weight and field more units inside a supply region.
+
+Signal (SIG) - Increases Iniative, which givs a better chance to reinforce in comabt and improves planning speed. Later models grant more iniative - Use these to speed up your Battle Plans and to reinforce faster in combat.
+
+- - - - - - - - -
+
+Division Design Notes:
+
+(1) Always aim for a width of 5, 10 or 20. The regular frontage in combat is 80 + 40 per extra attack vector (from a different province). Exceeding frontge gives you signfiicant combat penalties. Design with width 11 or 22 if you plan to attach the unit to a leader with Offensive trait (-10% unit frontage).
+
+(2) Support brigades don't increase frontage, so it's a good idea to add ART (and maybe AT, AA) to all your designs. They don't affect speed or hardness of a divsion, but do lower ARM and PIER.
+
+(3) This means that a base design with 10/11 width has higher firepower per frontage than 20/22 (because you can squeeze in more support ART), but it also costs more equipment and Land XP to design (since most nations start with 8+ INF in their main template).
+
+(4) Do not use pure Armor divisions. Armor has extremely low ORG and should be teamed up with MOT or MECH. Even when using the Blitzkrieg Doctrine Tree a pure Armor division will be barely more than a breakthrough unit that can't sustain combat for more than a few days.
+
+(5) SP-ART has, by far, the highest SA per frontage (followed by ART). It also needs far less equipment per brigade, so you actually pay ~30% less for it than for a regular ARM brigade, even if production cost per unit are the same. As of Sunflower (1.2), the equipment cost has been increased. They are still cheaper, but not *that* great of a deal anymore.
+
+(6) Related to that: Support ART, AT, AA and R-ART need less equipment than Frontline variants (but also provide less stats). LARM, MARM and HARM also have different equipment numbers (60, 50, 40), so while '41 costs are 10/13/27 IC less per equipment, the total IC cost per brigade is 60 * 10 = 600 vs. 50 * 13 = 650 vs 27 * 40 = 1080.
+
+(7) Remember you can use the DUPLICATE function to create new templates. Since every change to a template costs 5 XP per unit removed, exchanged or added (10 for support brigades), the duplicate function can save you a lot of Land XP. For example, if you want to have both LARM and MARM divisions with a few extra MOT, first finish your LARM template, then duplicate it and replace all LARM with MARM. That way you don't have to add the MOT units to both templates.
+
+(8) Any unit can capture territory, regardless of size. So if you want you can build single brigade MOT divisions to swarm out and capture territory. Just pray you aren't stopped by a "real" division.
+
+(9) ORG, ARM and PIER are calculated as an average (with some additional weights in it) of all your existing brigades. This means that adding a low ORG unit will lower your division's ORG, while adding a high ORG unit will slightly improve it (same for ARM / PIER).
+
+(10) ENG combines extremely well with a Defensive trait leader (+30% digin), even more so when the country also has Grand Battleplan (+10 dig-in) or Mass Assault Doctrine (+5 dig-in). France in particular can pull off some amazing dig-in values if they manage to grab the '39 model before the outbreak of the war - I have seen values up to 59% (just don't ask me HOW it is calculated).
+
+(11) A divisions armor and pierce are heavily dependent on the unit with the strongest stats. That means adding a single HARM or H-DT to a division will provide enough protection to be immune to any division that doesn't use AT, TDs or MARM/HARM.
+
+(12) When more comes to mind (or if there are some good questions in this thread), I'll add it here.
+
+- - - - - - - - -
+
+Example Division Designs:
+(Keep in mind these are just SUGGESTIONS to demonstrate how the system works, not necesarily the BEST DESIGNS). Support brigads are listed in [brackets].
+
+Basic Main Combat Infantry:
+10xINF [+ ART/ENG] (20 width)
+Cheap and affordable, but not much else. Good on defence. Useful for poor minors.
+
+Intermediate Main Combat Infantry:
+7xINF + 2xART [+ ART/AT/EN] (20 width)
+Same as above, but much better when attacking. Good for minors.
+
+Deluxe Main Combat Infantry Division:
+7xINF + 2xART [+ ART/AT/AA/ENG/LOG] (20 width)
+Good all-around division that can fend off tanks on it's own and even inflict minor losses to air units. LOG means you can squeeze in more divisions per Supply Region (great for GER / SOV / USA), ENG gives a good advantage when defending. Good for majors.
+
+XL Deluxe Main Combat Infantry Division:
+8xINF + 2xART [+ ART/AT/AA/ENG/LOG] (22 width)
+Same as above, just with an extra INF to get to 22 frontage. Good for majors with an Offensive leader.
+
+Mass Assault Division:
+10xINF + 2xART [+ART/AT/R-ART/ENG/LOG]
+Adjusted template that adds a few extra INF divisions to make use of the -0.4 frontage reduction from the Mass Assault Doctrine tree.
+
+Heavy Infantry DIvision:
+6xINF + 2xART +1x H-TD [+ART/R-ART/ENG/LOG] (20 width)
+A somewhat pricey, but extremely effective Infantry design. Protected against units without dedicated pierce and quite strong against enemy armor designs at the same time. A great option for late war countries like USA or SOV that have the time to grab HARM II tech before going into the fray.
+
+Artillery Division:
+4xINF + 4xART [+ ART/R-ART/LOG] (20 width)
+Has lower ORG than regular Infantry, but more firepower per frontage. Good for breakthroughs.
+
+Anti-Tank Division:
+4xINF + 2xAT [+ AT/ENG] (10 width)
+Great balance between SA, HA and cost. Keep them in reserve and use them in large stacks (8+) to halt enemy armored spearheads.
+
+Anti-Air Division:
+2xINF + 6xAA [+ AA/ENG] (10 width)
+Low ORG, but high AA. Keep them as a reserve in the rear and strat redeploy them into important battles where the enemy airforce is harassing you.
+
+Armored Spearhead:
+2xSP-ART + 3xARM + 4xMOT [+ ART/AT/MAIN/LOG] (20 width)
+Has great SA, good HA and decent ORG. A good spearhead and breakthrough division that can hold against counter-attacks.
+
+Assault Gun Division:
+4xSP-ART + 2xARM + 2xMOT [+ART] (20 width)
+Incredible SA that rips through enemy Infantry, with (barely) acceptable ORG value.
+
+Mixed Armor Division:
+2xSP-ART + 3xARM + 1xTD + 3xMECH (20 width)
+Mixed armor division that can deal with any situation.
+
+Motorized Division:
+7xMOT + 2xM-R-ART [+ART/REC/ENG]
+A fast division with decent speed modifiers. Even rivers won't stop these guys.
+
+Security Division:
+5xCAV [+MP]
+Partisan supression unit
+
+Garrison Division:
+4xINF + 2xAA [+ENG/AA]
+A defensive unit designed for island garrison duty where enemy air power is more threatening than tanks.
+
+
+
+
+Anti-Tank Division:
+4xINF + 2xAT [+ AT/ENG] (10 width)
+Great balance between SA, HA and cost. Keep them in reserve and use them in large stacks (8+) to halt enemy armored spearheads.
+
+Armored Spearhead:
+2xSP-ART + 3xARM + 4xMOT [+ ART/AT/MAIN/LOG] (20 width)
+Has great SA, good HA and decent ORG. A good spearhead and breakthrough division that can hold against counter-attacks.
+
+Assault Gun Division:
+4xSP-ART + 2xARM + 2xMOT [+ART] (20 width)
+Incredible SA that rips through enemy Infantry, with (barely) acceptable ORG value.
+
+Mixed Armor Division:
+2xSP-ART + 3xARM + 1xTD + 3xMECH (20 width)
+Mixed armor division that can deal with any situation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------x-------------------x---------------------x---------
+CAS WING ORGANIZATION =
+
+Wings of 50-100-200 planes. 
+Day/night preference = Day. 
+Operational preference = Normal operations (50%)
+\\\CAS Variants options
+   Long Range CAS: Reliability 3 / Range 4
+   Bomber CAS: Reliability 3 / Weapon 4
+\\\Tactical Bomber Variant recommendation
+   Quick Bomber → Speed 5 / reliability 3.
+ 
+
+AIR SUPERIORITY/INTERCEPTION ORGANIZATION=
+
+Fighter Hunt on Home Regions (include sea regions close to home) → (Air superiority).
+
+Day/night cycle = day.
+Operational strenght = Normal operations
+Recommended fighter = Light Fighter.
+Wing size = 1 to 5 Wings of 200-400-1000 planes each.
+\\\Fighter Variants recommendations.
+   Anti- Fighter → Speed 3 / Weapon 1 / Reliability 3
+
+Bomber Hunt on Home Regions (Air interception) →
+
+Day/Night cycle = Day and Night. 
+Operational strenght = Normal operations. 
+Recommended fighter = H. Fighter.
+Wing Size = 4 Wings of 250 (enough for the enemy bomber wing + Escorts).
+\\\Fighter Variants recommendations.
+   Anti-Strategic bomber fighter → Reliability 3 / Weapon 5
+\\\Heavy fighter Variant Recommendations
+   Bomber Killer → Speed 2 / weapon 2 / Reliability 3 →
+
+Escort Mission (air superiority on enemy territory)→
+
+day/night cycle → Night, the same as bombers and tac. Bombers.
+Operational strenght → Normal operations.
+Recommended fighter → Fighters or H. Fighters (both work)
+Wing Size → around 300 
+Fighters will be better if you can manage to make the fights more equal and they have the range for it.
+\\\Fighter Variants recommendations.
+   Pacific Fighter → Range 3-5 / Speed 0-2/ Reliability 3
+\\\Heavy fighter Variant Recommendations
+   Escort H. Fighter → Speed 2 / Range 3 / Reliability 3 →
+
+
+Fighter hunt on enemy regions (Air superiority or bomb interception on enemy territory but no allied bombers to defend) →
+NO. Just don´t.... 
+
+
+
+\CAS Variants options
+Long Range CAS: Reliability 3 / Range 4
+Bomber CAS: Reliability 3 / Weapon 4
+
+
+
+\Fighter Variants recommendations.
+Anti-Strategic bomber fighter → Reliability 3 / Weapon 5
+Anti- Fighter → Speed 3 / Weapon 1 / Reliability 3
+Pacific Fighter → Range 3-5 / Speed 0-2/ Reliability 3
+
+
+\Naval Bomber Variant Recommendations.
+Pacific naval bomber → range 4 / Reliability 4 formula.
+Weapon 2 / Range 3 / Reliability 3
+
+
+\Heavy fighter Variant Recommendations
+Escort H. Fighter → Speed 2 / Range 3 / Reliability 3 →
+Bomber Killer → Speed 2 / weapon 2 / Reliability 3 →
+
+
+\Tactical Bomber Variant recommendation
+Quick Bomber → Speed 5 / reliability 3.
+
+
+\Variants Strategic Bombers
+Super long ranged bomber→ Range 5 / reliability 3
+Air supremacy bomber → Engine 5 / reliability 3
+
+
+
+
+x---------------x--------------x
+Agora tudo de novo com mais Detalhes
+
+
+CAS WING ORGANIZATION =
+
+Wings of 50-100-200 planes. 
+
+Day/night preference = Day. This way you perform 2 mission each day at 100% Efficiency.
+At night they only perform 1 mission (-50% dmg) and again take another -50% dmg for being at night.
+With day+Night you can do +1 missions every 4 days, but a lot of those missions will be at night and thats just not worth the risk.
+
+Operational preference = Normal operations (50%) = Those wings are horrible if they are damaged, don´t send them to their deaths for nothing. They need to be full strenght to be useful.
+
+
+
+
+
+
+Air Superiority/Interception
+
+Base detection chance on friendly/occupied state is 10%.
+
+1-> Fighters and H. Fighters Wings in interception mission will increase detection chance up to 5% (2000 planes in a region for maximum bonus and is the optimal amount).
+2-> Radar increase detection chance up to 25% in a state.
+3-> Chance of detecting a bomber -50%
+
+Second Stage. Target Stage and 2vs1 fights.
+
+If you have advantage in numbers for every extra plane you will have a 40% chance of that extra plane to help and make the fight a 2vs1. (it also works for the enemy).
+There is a cap of 2. So there is no point trying to make a 3vs1 or more . It will not happen.
+
+There is two good things about a 2vs1.
+One is that the enemy now have to shoot 2 planes. Being much more difficulty for the plane to shoot one of them down.
+The second is that both fighters get a +18% hit chance.
+
+The Max number of wings that can participate in a combat. The wiki is not very clear if its 6 or 8.
+But with 1000 planes being the max for each wing we know the maximum amount of aircraft that can participate in a battle at same time. 6000-8000 planes.
+
+
+
+AIR SUPERIORITY/INTERCEPTION ORGANIZATION=
+
+Fighter Hunt on Home Regions (include sea regions close to home) → (Air superiority).
+
+Day/night cycle = day. You want those fighters to avoid Strategic bombers and hunt other nimble fighters like CAS, Naval bombers etc. 
+
+Operational strenght = Normal operations
+
+Recommended fighter = Light Fighter.
+
+Wing size = 1 to 5 Wings of 200-400-1000 planes each.
+Never run this mission with a small size, you will be crushed as light fighters can´t take a 2v1 due to poor defense.
+
+Bomber Hunt on Home Regions (Air interception) →
+
+Day/Night cycle = Day and Night. 
+
+Operational strenght = Normal operations. 
+
+Recommended fighter = H. Fighter.
+
+Wing Size = 4 Wings of 250 (enough for the enemy bomber wing + Escorts).
+They can be escorted and a 2vs1 fight of a Bomber +fighter vs 1 Heavy fighter will be impossible to win. You need number advantage.
+Also if you use fighters they will drop like flys as they barely survive a S. Bomber alone, even more with a enemy fighter helping them.
+With a size of 250 you can face a S. Bomber wing of 100 and still have 150 units to go for escorts.
+
+You need 4 wings because rarely you will have only 1 Wing bombing you. CAS wings are numerous and your wing can only engage 2 wings before going to rest. 
+
+
+Escort Mission (air superiority on enemy territory)→
+
+day/night cycle → Night, the same as bombers and tac. Bombers.
+
+Operational strenght → Normal operations.
+
+Recommended fighter → Fighters or H. Fighters (both work)
+
+Wing Size → around 300 with a air coverage of 50%. More if its lower, less if its higher. Up to 150 at 100% Range efficiency.
+
+Fighters will be better if you can manage to make the fights more equal and they have the range for it.
+
+
+Fighter hunt on enemy regions (Air superiority or bomb interception on enemy territory but no allied bombers to defend) →
+NO. Just don´t.... you have nothing to gain trying to kill fighters in a territory where range works against you and you're not bombing anything.
+You're just wasting fighters and giving free air XP to them.
+
+
+
+
+Close air Support. 
+
+The division Strenght killer. The CAS have the best ground attack compared to the tactical bomber, its crazy cheap (for a plane).
+
+1 production line of CAS is already enough to make a difference as you can make them work with small wings and they will need very little escort from fighters.
+
+
+They have the same range as fighters and you must avoid placing them on bad air coverage regions as you will have to increase the wings and risk more and more for too little damage. Build airports close to the front just for them and make them walk with the troops.
+
+
+The Battlefield support doctrine will increase their damage by 40%. It can make a 1944 CAS to go from 20 ground attack to 28. Enough for a single CAS to do 1,4 Strenght dmg on a division.
+
+On late game most divisions will have a very low hp as they replace infantary for tanks that have only 2HP, motorized are even more vulnerable for also being expensive. Most divisions widht 20 created by players will have around 130-180HP. So all you need now is to bomb them into oblivion and make the enemy factorys having to waste more time replacing everything.
+
+
+A good player using a smart formation of CAS + Strategic bombers can starve a country of expensive materials and bomb them back to the napoleonic era.
+
+
+CAS Variants options. 
+I recommend 2 types of CAS.
+
+Long Range CAS: Reliability 3 / Range 4 → Those variants will have a 1400km range. Enough to counter a lot of air coverage problems on big fronts. This will also improve its survival vs AA´s and planes as your wings will be closer to 100% effiency.
+
+
+Bomber CAS: Reliability 3 / Weapon 4 → This one is all about dmg. Use them on closer regions or airports you have just taken and can use with 100% coverage (or close to this). The extra attack will make them feel the pain of not having air superiority.
+
+
+
+Fighter → The king of the air.
+Versatile, fast, agile and with the right upgrades it can take down everything in the game.
+
+You want 1 to 3 production lines of fighters to keep up with losses.
+
+The fighter only face 3 problems, but those problems are huge.
+
+Problem number one > 2vs1 fights are brutal for them, they just don´t have a high defense and will go down if outnumbered. So they must work on Big wings to cover each other and regions with high air coverage.
+
+
+Problem number two > Strategic bombers will win most of the time a 1x1 fight if the fighter is not a variant version.
+
+
+Last problem → Low range (1k at 1940-44) also means they are meant only to hunt inside your territory. Never use them to fight the enemy at home. You will face severe Air Coverage problems most of the time and your fighters will drop like flys.
+
+The Operational integrity doctrine is the best one if you wish to buff fighters. It will greatly increase their agility and air interception and superiority missions. Also its the best for ace´s.
+
+Fighter Variants recommendations. 
+
+Anti-Strategic bomber fighter → Reliability 3 / Weapon 5 → This fighter is all about going against bombers and blowing them from the skys. In a 1x1 fight they will win most of the time as they continue to have a speed and agility advantage.
+
+The problem is that now they are vulnerable to enemy fighters and Heavy fighters.
+Its a cheap way to go for Strategic bombers if your country can´t afford to research all the planes. You place everything on the fighter basket and live with it.
+
+If you go that route i also recommend a manufactory that gives +10% Speed and agility to fighters if they are available.
+
+Anti- Fighter → Speed 3 / Weapon 1 / Reliability 3 → This one will get tired of killing planes. The extra speed and agility buff will make sure you have even more bonus to face the enemy and will always have the advantage vs other fighters. The small increase in weapon will also help a lot.
+
+
+Pacific Fighter → Range 3-5 / Speed 0-2/ Reliability 3 → This fighter is only recommended on the pacific theater or places where the territory is só big that even if you place a airport there you still have range problems.
+
+South america, Pacific, Africa, Parts of asia. All those theaters enter in this field and if you wish to use fighters there you need this.
+
+
+
+Naval Bomber →
+
+I don´t talked much about those. Mostly because my knowledge of the naval war is minimal.
+
+What i can tell is that no doctrine benefits naval bombers very well. (strategic destruction have a 15% bonus, but the others have a 10% bonus). Its not worth choosing a doctrine with a naval bomber in mind.
+
+
+I can´t say if speed will help a naval bomber to avoid AA. The only defense i can tell you to use is numbers numbers and numbers. More bombers in the skys more targets the AA will shoot helping each plane to go back home alive.
+
+
+What naval bombers need the most is range. Most sea regions are very big and it will be very commom for the naval bomber to not find ships because of the air coverage.
+
+Variant Recommendations. 
+
+
+Pacific naval bomber → range 4 / Reliability 4 formula.
+
+If your naval war is close to home like
+italy for example maybe its worth going Weapon 2 / Range 3 / Reliability 3 to increase your chances.
+
+
+Heavy fighter. 
+
+Jack of all trades, Master of none.
+
+The heavy fighter is by far the plane with most air attack of the game. Its low agility also make sure they will give all the air vs air bonus to a fighter and lose in a 1x1 because of that.
+
+They are perfect bomber escorts because of their range and bomber hunters because of their armor. Being able to fight a Strategic bomber + Fighter in a 2v1 and hope to survive and live to tell the tale. At worst he will be able to live enough to do some damage.
+
+
+Operational integrity can buff them a lot and is the best doctrine for them. Also a particular industry can increase their reliability by 20%. That can make his variant very very cheap as you don´t need to increase reliability.
+
+
+Variant Recommendations.
+
+
+Escort H. Fighter → Speed 2 / Range 3 / Reliability 3 →
+This fighter only purpose is to stop a enemy fighter of getting your Strategic bomber and help him out to survive.
+
+
+The range is to help more H. Fighters to enter in the battle and avoid a huge air coverage penalty.
+Also the speed will help those fighters come back home alive.
+
+
+Bomber Killer → Speed 2 / weapon 2 / Reliability 3 →
+
+All they need to hunt a bomber and kill them. Also improve his survival chance vs fighters.
+
+
+
+Tactical Bomber →
+
+A lot of people ignore them for having worse stats.
+Sure, they can´t compete with a CAS and can´t compete with a Strategic bomber.
+
+But they can do Both main missions and cost only 27IC while a S. Bomber + CAS would cost around 80IC.
+
+
+Countrys that have problems researching fighters or factory output problems should focus on those bombers instead. They will do the job and can survive with escort.
+
+
+Strategic destruction doctrine is the best tree for them. Giving +25% defense for them.
+
+Variant recommendation. 
+
+Quick Bomber → Speed 5 / reliability 3.
+This variant will get almost 500km/h on a 1940 version and will have 30+ agility.
+Add the +20% defense and they will be a fighter very hard to take down without the right upgrades.
+
+
+You want to avoid putting range into bombers because otherwise the H. Fighters will be unable to escort them. (Unless you make a full range version for this).
+
+
+Strategic bombers → 
+
+Right now the most hated bomber of the game, not because its bad but because its good.
+
+
+Without any upgrades a Strategic bomber is a sight to fear. They have the best defense of all planes and unless they face a number disadvantage they will be able to tear fighters apart easily.
+
+Even a Heavy fighter will find problems to survive if they end up fighting 2 bombers or one bomber +1 fighter.
+
+
+The problem is that the S. Bomber is so slow that no speed bonus will save him.
+They should always work at night to avoid detection. A damaged industry can be bombed again tomorrow, but not if you lose the bomber.
+
+They are also very expensive and only some countrys can afford them.
+
+
+The Strategic destruction doctrine is the best for them giving tons of defense (+25%) plus they remove the night disadvantage for bombers.
+
+
+Variants 
+
+Super long ranged bomber→ Range 5 / reliability 3
+
+Worth in the pacific and other regions where you have no way to have escorts no matter what you do. Also super interesting to jump whole regions and hurt the enemy well behind the lines if he is concetrating the airforce on the front.
+
+
+With a 9000km range in 1944 no place is safe from this variant.
+
+
+Air supremacy bomber → Engine 5 / reliability 3
+
+
+The speed buff is minimal, the agility actually hurt you.
+But its still worth it. Its enough to remove just a little of the enemy buff and give you a slight better chance of taking them down.
+
+
+
+EDIT 18/06 -> One very important quote explaining airfields and how they work 
+
+
+
+
+-----------------x---------------------x--------------------
+
+
+
+
+
+
+
+
+
+
+
+
+Command	Effect	Example 
+
+add_equipment(ae) [<equipment amount>] [<equipment name>]	Adds equipment	Equipment uses the basic name so 'add_equipment 1000 Infantry Equipment VI'
+
+add_latest_equipment(ale) [<equipment amount>]	Gives player amount of latest equipment variants	
+
+whitepeace(wp) [<country tags>]	White peace with the specified countries.	
+
+teleport(tp) [<province_id>]	Teleports selected armies or ships to the specified province	
+
+allowdiplo(adiplo,nocb)	Allows to use all diplomatic actions for no matter the rules. (Can declare war without justification)	
+
+debug_nuking	Allows to nuke every province without checking any conditions.	
+
+instantconstruction(ic)	Toggles instant construction cheat.	
+
+event [event id] [<Target Country Tag>]	Executes an event	event political.3 for communist coup 6 for democratic 9 for fascist
+
+research [<slot id> or "all"]	Researches a technology from research slot or all.	Research all will instant research all technology's
+
+research_on_icon_click	Research a technology when clicking on technology tree icon	Will Allow you to research an item without its prerequisite
+
+annex [<Target Country Tag>]	Begin annex/annexes the specified tag	annex USA or annex d01
+
+winwars	Gives max war score in all wars for the country	
+
+manpower [<Amount>]	Adds manpower to player	Give in the exact number, so manpower 100 will give you 100 men
+
+add_opinion [<Country tag>]	Add opinion to/from tag	
+
+tag [<Country tag>]	Switch tag to another country	
+
+observe(spectator)	Switches to play no country at all, and no longer shows messages or pauses the game	
+
+tdebug	Toggles Debug info	Helpful for finding nation tags and ID's
+
+spawn [<SubUnit Type>] [<Province ID>] [<Amount>]	Spawns a unit in a province (Currently, this command does not work. When entered into the console, units do not spawn; 
+the console instead returns a message saying "Command available only for developers". The fix, if there is any, is not known.)	
+
+occupationpaint(op)	Toggles occupation painting	
+\
+
+setowner [country tag] [state id]	Sets state owner	
+
+setcontroller [country tag] [province id]	Sets province controller	
+
+xp [XP amount]	Gives Army, navy and air experience to player	
+
+pp(fuhrer_mana,political_power) [PP amount]	Gives political power to player	
+
+civilwar [<ideology>] [<target country tag>]	Spawns a civil war	civilwar fascism ENG :  Other Valid ideologies "communism" "democratic" "neutrality"
+
+help [command name]	Print out all console commands or a specific command description.	
+
+Focus.AutoComplete	Allows national focuses to be instantly finished\
+	Affects AI
+
+instant_prepare	Instantly prepares naval invasions	
+
+nu [number]	Adds the specified amount of National Unity	
+
+nuke [number]	Adds nuke	
+
+yesman	AI will accept all diplomatic offers	
+
+
+
+
+
+
+-----------------x---------------------------------x-----------------
