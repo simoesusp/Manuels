@@ -61,6 +61,15 @@ Signal 				+20% Initiative 		+12% Initiative 		+12% Initiative 		+12% Initiative
 
 
 
+
+Policy		Resistance Growth	Occupation Cost	Local Resources	Local Manpower	Local Factories
+Gentlest	−60%				0.00			−30%			−70%			−60%
+Gentle		−40%				0.01			−20%			−80%			−40%
+Harsh		−20%				0.02			−10%			−90%			−20%
+Harshest
+
+
+
 --------------------------x------------------------x------------------------x---------------------------x------------------------x	
 
 Recon				Infantry	Infantry	Infantry	Infantry	None
