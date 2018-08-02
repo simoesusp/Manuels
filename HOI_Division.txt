@@ -711,74 +711,232 @@ EDIT 18/06 -> One very important quote explaining airfields and how they work
 
 
 
+Useful commands
 
-Command	Effect	Example 
+Command	Effect	Example/Comment
 
-add_equipment(ae) [<equipment amount>] [<equipment name>]	Adds equipment	Equipment uses the basic name so 'add_equipment 1000 Infantry Equipment VI'
-
+gain_xp [<amount>]	Adds experience to selected Leader/General	gain_xp 696969 (level capped at 9) Can also be used to add traits ie: gain_xp desert_fox
+cp [<amount>]	Adds Command Power	cp 100 (capped at 100)
+st [<amount>]	Adds Stability	st 100 (capped at 100)
+ws [<amount>]	Adds War Support	ws 100 (capped at 100)
+allowtraits	Allows free assignment of general traits	
+add_equipment(ae) [<equipment amount>] [<equipment name>]	Adds equipment	Equipment uses the basic name so 'ae 1000 Infantry_Equipment_1'. Does not support Naval equipment. (with the exception of convoy: 'ae 1000 convoy_1')
 add_latest_equipment(ale) [<equipment amount>]	Gives player amount of latest equipment variants	
-
 whitepeace(wp) [<country tags>]	White peace with the specified countries.	
-
-teleport(tp) [<province_id>]	Teleports selected armies or ships to the specified province	
-
-allowdiplo(adiplo,nocb)	Allows to use all diplomatic actions for no matter the rules. (Can declare war without justification)	
-
+teleport(tp)	Activates the Teleportation tool	Can teleport units where ever you tell them to go
+allowdiplo(adiplo,nocb)	Allows to use all diplomatic actions for no matter the rules. (Can declare war without justification)	This is likely the most effective way of wanting to start a war without needing to wait for the justification. If you only want instant justification and not the extra options it comes with, then use (instant_wargoal).
 debug_nuking	Allows to nuke every province without checking any conditions.	
-
-instantconstruction(ic)	Toggles instant construction cheat.	
-
+instantconstruction(ic)	Toggles instant construction cheat.	This cheat will apply to AI as well, so be wary when enabling. Ships are also constructed instantly.
 event [event id] [<Target Country Tag>]	Executes an event	event political.3 for communist coup 6 for democratic 9 for fascist
-
-research [<slot id> or "all"]	Researches a technology from research slot or all.	Research all will instant research all technology's
-
+research [<slot id> or "all"]	Researches a technology from research slot or all.	Research all will instant research all technologies
 research_on_icon_click	Research a technology when clicking on technology tree icon	Will Allow you to research an item without its prerequisite
-
-annex [<Target Country Tag>]	Begin annex/annexes the specified tag	annex USA or annex d01
-
+annex [<Target Country Tag>]	Begin annex/annexes the specified tag	annex USA or annex d01 or annex all
 winwars	Gives max war score in all wars for the country	
-
 manpower [<Amount>]	Adds manpower to player	Give in the exact number, so manpower 100 will give you 100 men
-
 add_opinion [<Country tag>]	Add opinion to/from tag	
-
 tag [<Country tag>]	Switch tag to another country	
-
-observe(spectator)	Switches to play no country at all, and no longer shows messages or pauses the game	
-
+observe(spectator)	Switches to play no country at all, and no longer shows messages or pauses the game. However, it also interferes with AI performance and is not a good indication of what the AI will do if observe mode is not used.	
 tdebug	Toggles Debug info	Helpful for finding nation tags and ID's
-
-spawn [<SubUnit Type>] [<Province ID>] [<Amount>]	Spawns a unit in a province (Currently, this command does not work. When entered into the console, units do not spawn; 
-the console instead returns a message saying "Command available only for developers". The fix, if there is any, is not known.)	
-
-occupationpaint(op)	Toggles occupation painting	
-\
-
+spawn [<SubUnit Type>] [<Province ID>] [<Amount>]	Spawns a unit in a province	This command does not work, when entered into the console, units do not spawn; the console instead returns a message saying "Command available only for developers". To fix this, go to your Steam library and change the Launch Options to "-debug" prior to launching, and then launch the game in debug mode.
+occupationpaint(op)	Toggles occupation painting. If used with country tag occupies all of their owned, not controlled, land, e.g., op JAP.	
 setowner [country tag] [state id]	Sets state owner	
-
 setcontroller [country tag] [province id]	Sets province controller	
-
-xp [XP amount]	Gives Army, navy and air experience to player	
-
+xp [XP amount]	Gives Army, navy and air experience to player	Can be used once per day
 pp(fuhrer_mana,political_power) [PP amount]	Gives political power to player	
+civilwar [<ideology>] [<target country tag>]	Spawns a civil war	civilwar fascism ENG :
+Other Valid ideologies "communism" "democratic" "neutrality"
 
-civilwar [<ideology>] [<target country tag>]	Spawns a civil war	civilwar fascism ENG :  Other Valid ideologies "communism" "democratic" "neutrality"
-
+add_party_popularity <ideology group> <value>	Adds party popularity	ideology group has shortcuts d f n c for vanilla HOI groups.
+set_ruling_party <ideology group>	Sets ruling party	ideology group has shortcuts d f n c for vanilla HOI groups.
 help [command name]	Print out all console commands or a specific command description.	
+Focus.AutoComplete	Allows national focuses to be instantly finished	Affects AI
+Focus.NoChecks	Ignores focus requirements	Affects AI
+Focus.IgnorePrerequisites	Ignores focus prerequisates	Allows you to start a focus in the middle of the tree
+Decision.NoChecks	Ignores decision requirements	also disables cost
+instant_prepare	Instantly prepares naval invasions	Displays message "Command only available for developers" To fix this, go to your Steam library and change the Launch Options to "-debug" prior to launching, and then launch the game in debug mode
+nu [number]	Adds the specified amount of National Unity	Only works Pre-1.5
+nuke [number]	Adds nukes	Add 100 or 1000
+yesman(ai_accept)	AI will accept all diplomatic offers	
 
-Focus.AutoComplete	Allows national focuses to be instantly finished\
-	Affects AI
 
-instant_prepare	Instantly prepares naval invasions	
+All commands
 
+Command	Effect	Example/Comment
+
+rendertype	Reports what render backend is used	
+tweakergui	Spawns a tweaker GUI	
+add_equipment(ae) [<equipment amount>] [<equipment name>]	Adds equipment	add_equipment 200 Sonderkraftfahrzeug 251/20 : See "equipment_l_english.yml" for full list of names
+add_ideas [<idea name>]	Adds ideas with <id> to the country	See ideas within the respective country-file under .\common\ideas
+add_latest_equipment(ale) [<equipment amount>]	Gives player amount of latest equipment variants	
+reload [file name]	Reloads assets	
+reload loc (reloads localisation files)
+reload focus (reloads focuses)
+reload landcombat.gui (reloads land combat interface)
+time	What time is it?	
+reloadfx [Arguments: map/mapname/postfx or *.fx filename]	Reloads the shader	
+particle_editor	Spawns a particle editor	
+whitepeace(wp) [<country tags>]	White peace with the specified countries.	
+testtool(test)	Testing tool.	
+analyzetheatres(anth)	Analyze theatres for errors.	
+massconquer(massc)	Mass conquer tool.	
+deleteallunits(delall)	Delete all armies and fleets of the specified countries.	deleteallunits SPR
+aircombat(airc) [<scenario name>] [<result name>] [<province id>] [<state id with airbase>] [<state id with airbase>] [<equipment type>] [<equipment type>] [<equipment creator country>] [<equipment creator country>]	Spawns an air combat in desired location.	
+teleport(tp) [<province_id>]	Teleports selected armies or ships to the specified province	
+theatersrebuild(trebuild)	Rebuilds all theatres in the world. All orders will be cleaned.	
+fronts	Toggle visibility of the foreign fronts	
+aidump	Dump AI front data to log file, needs to have a unit selected	
+traderoutes	Toggle visibility of trade routes	
+debug_tactics	Toggle visibility of debug tooltip for tactics	
+allowdiplo(adiplo,nocb)	Allows to use all diplomatic actions for no matter the rules.	
+debug_nuking	Allows to nuke every province without checking any conditions.	
+reloadsupply(relsup)	Reinitializes the supply systems.	
+deltat [<speed factor>]	control animation speeds	
+building_health(bhealth) [<building type>] [<state or prov id>] [<building level>] [<health to add>]	Changes specified building health	
+instantconstruction(ic)	Toggles instant construction cheat.	
+nomapicons	Toggles map icons.	
+nopausetext	Toggles the pausebanner for nicer screenshots.	
+nextsong	Changes the currently playing soundtrack.	
+combatsound	How often does the combat view give a random sound? 0-50	
+morehumans(humans) [num]	Adds more humans	
+window(wnd) [Arguments: open/close] [window gui name]	Opens or closes the specified window	
+reloadinterface	Reloads the entire interface	
+reloadtechnologies	Reloads the technology database	
+updateequipments	Updates the equipment database	
+updatesubunits	Updates the subunit database	
+reloadoob [<Target Country Tag>]	Reloads OOBs	
+update_loc [localization tag]	Updates the localization tag file	
+poll	Polls valid Events	
+pause_in_hours	Pauses the game after X hours have passed after command is called	
+event [event id] [<Target Country Tag>]	Executes an event	event political.3 for communist coup
+research [<slot id> or "all"]	Researches a technology from research slot or all.	
+research_on_icon_click	Research a technology when clicking on technology tree icon	
+add_autonomy [<Target Country Tag>] [num]	Changes a country's autonomy level	add_autonomy PHI -200
+annex [<Target Country Tag>]	Begin annex/annexes the specified tag	annex USA or annex d01
+winwars	Gives max war score in all wars for the country	
+testevent [<Event ID>] [<Character ID>]	Tests an event without triggering it	
+manpower [<Amount>]	Adds manpower to player	
+add_opinion [<Country tag>]	Add opinion to/from tag	
+tag [<Country tag>]	Switch tag to another country	
+resign	Resign from the game	
+add_interest [<Country tag>]	Add specified country tag to your interest	
+remove_interest [<Country tag>]	Removes specified country tag from your interest	
+add_diplo	Adds diplomatic entroute	
+PrintSynchStuff	Prints random count and seed	
+SetRandomCount	Sets the randomcount to 0 or arg	
+observe(spectator)	Switches to play no country at all, and no longer shows messages or pauses the game. However, it also interferes with AI performance and is not a good indication of what the AI will do if observe mode is not used.	
+ai	Toggles the AI on or off	
+human_ai	Toggles AI for Human countries	
+ai_invasion	Toggles AI AI naval invasions	
+ai_accept(yesman)	Toggles AI always accept diplomacy	
+fow(debug_fow) [<Province ID> OPTIONAL]	Turns off fog of war in a province or in general	
+collision(debug_collision)	Toggles debug display of normals/bounding boxes/collision	
+savegame	Creates a savefile.	
+savecheck	Makes a save file (Test_01), loads the save file, makes a new savegame (Test_02). Those save files should look the same.	
+IP	Shows your IP	
+requestgamestate	Requests the gamestate from host	
+nudge	Go to the nudge tool	
+mapmode [Mapmode type (int)]	Change mapmode.	
+fullscreen	Toggles fullscreen	
+prices	Price Info	
+add_core [<State ID>] [<Country Tag>]	Add core	
+remove_core [<State ID>] [<Country Tag>]	Remove core. Note:Does not Work	
+debug_zoom	Zooms in the game	
+debug_types	Will print the data type for all dynamic reference objects. Can only be used if using RTTI.	
+debug_show_event_ID	Shows event ID	
+debug_commands	Printing commandcount to message.log	
+debug_events	Start Counting events	
+debug_dumpevents	Dump Event data to game log	
+debug_diploactions	Start Counting diplomatic actions	
+debug_dumpdiploactions	Dump diplomatic action data to game log	
+debug_assert	Toggles asserts on/off	
+debug_smooth	Toggle framesmoothing	
+debug_nomouse	Toggles mouse scrollwheel on/off	
+debug_terrain	Toggles Terrain on/off	
+debug_cities	Toggles Cities painting mode on/off	
+debug_water	Toggles Water on/off	
+debug_fronts	Toggles interpolated fronts debug	
+debug_off_front_snap(dbg_fsnap)	Toggles offensive fronts snapping debug	
+debug_borders	Toggles Borders on/off	
+debug_trees	Toggles Trees on/off	
+debug_rivers	Toggles Rivers on/off	
+debug_postfx	Toggles PostFX on/off	
+debug_sky	Toggles Sky on/off	
+debug_bloom	Toggles Bloom on/off	
+debug_tooltip	Toggles Tooltips on/off	
+flagsoutput [<path>]	Creates texture atlas files from memory.	
+cityreload	Reloads the cities	
+error	Show errors in log	
+version	Show current game version	
+debug_nogui	Toggles GUI on/off	
+debug_volume [<Volume Delta>]	Modifies music volume	
+debug_lockcamera	Toggles Camera locked on/off	
+debug_lines	Toggles Debuglines	
+debug_entities	Toggles Debug entities	
+debug_info	Toggles Debug info	
+debug_particle	Toggles Particles Debug info	
+debug_ai_budget [CountryTag]	Show ai budget data	
+debug_textures	Writes Texture info to application debug log	
+debug_texture	draws textures like bloom	
+debug_wireframe	Toggles forced wireframe on/off	
+debug_achievements_clear	Clear all achievements and user stats	
+moveunit [<Unit ID>] [<Province ID>]	Moves a unit to a province	
+spawnactor [<Actorname>] [<Province ID>] [<Animation> OPTIONAL]	Spawns an actor with an optional animation	
+spawn [<SubUnit Type>] [<Province ID>] [<Amount>]	Spawns a unit in a province	
+guibounds(gui)	Toggles GUI bounds debug	
+cameraclamp	Toggles the camera clamping	
+provtooltipdebug(tdebug)	Toggles the debug info in province tooltip	
+reloadweather [<randomseed>]	Reload and regenerate weather	
+weather	Toggle weather simulation	
+debug_air_vs_land(dbg_cas)	Toggle debug mode for air vs land combat.	
+mapnames	Toggle map names	
+gbreload	Reloads gradient borders	only for developers
+gbpaint [layer] [channel]	Toggles gradient border painting	
+occupationpaint(op)	Toggles occupation painting	
+setowner [country tag] [state id]	Sets state owner	
+setcontroller [country tag] [province id]	Sets province controller	
+profilelog	Prints out the profiling informations into time.log	
+run	Runs the specified file with list of commands	
+oos	Out of Synch	
+debug_crash(crash)	Crash!	
+sleep(wait) [time in sec]	Sleep	
+goto_province [province id]	Centers to province	
+goto_state [state id]	Centers to state	
+trigger_docs(effect_docs)	Print docs for triggers and effects	
+xp [XP amount]	Gives Army, navy and air experience to player	
+threat [Threat amount]	Adds or show threat level of player	If one does "threat 999999999" it will reset the world tension to 0	
+pp(fuhrer_mana,political_power) [PP amount]	Gives political power to player	
+3dstats	Toggles 3D Stats	
+hdr	Toggles hdr	
+hdr_debug	Toggles hdr debugging	
+srgb	Toggles sRGB	
+bloom	Toggles bloom	
+PostEffectVolumes.Default [posteffect_values name]	Toggles default posteffect values	
+night	Toggles night	*as of 1.01 this does not seem to work (filed under developer-only command) This command can be emulated via the day/night loop option at the bottom right toolbar (shortcut key 'N')
+filewatcher	Toggles filewatcher	
+civilwar [<ideology>] [<target country tag>]	Spawns a civil war	civilwar fascism ENG :
+Other Valid ideologies "communism" "democratic" "neutrality"
+
+add_party_popularity <ideology group> <value>	Adds party popularity	ideology group has shortcuts d f n c for vanilla HOI groups.
+set_ruling_party <ideology group>	Sets ruling party	ideology group has shortcuts d f n c for vanilla HOI groups.
+createlean	Create LEAN textures	
+helplog	Print out all console commands to game.log file.	
+help [command name]	Print out all console commands or a specific command description.	
+helphelp	Double Rainbow help.	
+hsv	Converts RGB to HSV	
+tag_color	Test setting a country's color	
+browser [url]	Show browser window	
+browser_base_url [url]	Set browser base url	
+aiview	Enable AI debug info	
+Focus.AutoComplete	Allows national focuses to be instantly finished	Affects AI
+Focus.NoChecks	Ignores focus requirements	Affects AI
+instant_prepare	Instantly prepares naval invasions	Developer Only
 nu [number]	Adds the specified amount of National Unity	
-
+pp [number]	Adds the specified amount of Political Power	Not specifying the amount of political power will give the player 1000 political power.
 nuke [number]	Adds nuke	
-
-yesman	AI will accept all diplomatic offers	
-
-
-
+airealism	Enable realistic AI	An easter egg making the AI smacktalk in chats. Useless since unactivable in multiplayer and chat unactivable in singleplayer.[2]
+instant_wargoal	Will allow instant justificatiion of war goals on countries	
+set_country_flag [<Country Flag>]	Adds a country flag to currently played nation.	Does not work if you put another nations tag in the command such as "set_country_flag flag AUS". The console will give a message confirming the command, but in my testing no flag is set.
+set_cosmetic_tag [<country tag>] [<cosmetic tag>]	changes the name and flag of the country	set_cosmetic_tag USA SOV
 
 
 

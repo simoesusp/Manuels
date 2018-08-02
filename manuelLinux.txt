@@ -53,6 +53,13 @@ sudo rm -r NOMEDAPASTA  --> Remove a pasta (-r  =>  recursivamente)
 mkdir  NOMEDAPASTA   --> Cria pasta
 
 
+
+x---------------x--------------------x
+CRIAR LINK NO DESKTOP
+cd ~/Desktop
+ln -s /home/simoes/eagle-9.0.1/eagle EAGLE
+
+
 x---------------x--------------------x
 MOUNT ISO:
 EX.: Monte a ISO do Microsoft Office e instale normalmente:
@@ -99,6 +106,10 @@ qualquer comando tab tab  -->  mostra todas as variacoes do comando
 lspci -> mostra ate'  a placa de video
 lsusb
 
+lshw -short --> lista o hardware da maquina, falando do processador e memoria
+			--> -short resume tudo... fica bem melhor...
+	--> Mas nao vem por default, tem que instalar:
+	sudo apt-get install lshw
 x---------------x--------------------x
 MUDAR OWNER
 sudo chown -R simoes: Foguete  --> Se for Folder do ROOT, tem que mudar com sudo
@@ -158,6 +169,16 @@ Format your new partition.
 
 Eject the device:
  sudo eject /dev/sdb
+
+
+x---------------x--------------------x
+Gravar uma imagem de um disco
+
+sudo dd if=~/Documents/zip/Activated.iso of=/dev/sdc
+-> if e' o input file    e of  e' o output file e tem que apontar para o nome do pendrive, sem os numeros das particoes
+
+--> Para listar os nomes dos discos: 
+sudo fdisk -l
 
 
 x---------------x--------------------x
@@ -227,12 +248,26 @@ Pra rodar um programa:
 x---------------x--------------------x
 ARDUINO
 
-LIBRARIES: /home/simoes/sketchbook/libraries/
+Eu desinstalei a versao que tava (Arduino2:1.0.5) e baixeidireto do GITHUB a ultima versao do Arduino= 1.8.5
+link: https://www.arduino.cc/en/Main/Software
+Deszipar a pasta e executar o install.sh pra instalar o sw.
+
+--> Essa versao funcionou e programaou o Arduino de primeira, pois eu ja' tinnha resolvido os problemas da USB na versao anterior...
+
+LIBRARIES: /home/simoes/Arduino/libraries/
+--> Mudou as libraries pra esse novo lugar!!
+
+-----------------------
+Jeito Ruim de instalar (Instala uma versao maluca Arduino2:1.0.5)
+Essa versao nao tem um Library Mananger e RECLAMA das libraries que tem "-" no nome!!!!
+--> Nao consegui fazer a library do NTSF funcionar ... Entao desinstalei tudo com: sudo apt-get purge arduino
 
 sudo apt-get update  --> Updata a lista de repositorios
 sudo apt-get install arduino  --> instala o Arduino IDE
 sudo apt-get install arduino arduino-core  --> instala mais bagulhos
 sudo apt upgrade  --> Updata todo sw que ja' foi instalado! Inclusive o do Arduino
+
+LIBRARIES: /home/simoes/sketchbook/libraries/
 
 --> So' que agora nao vai encontrar a porta serial pra programar o arduino!
 --> Tem que arrumar assim:
@@ -348,6 +383,12 @@ sudo apt-cache search glut
 dpkg -L freeglut3-dev
 
 --> which will list contents of the package
+
+
+----x----
+--> Caso deseje compilar um código com um único arquivo .c basta incluir as seguintes flags "-lglut -lGLU -lGL -lm".
+
+gcc -o exemplo exemplo.c -lglut -lGLU -lGL -lm
 
 
 x---------------x--------------------x
@@ -471,6 +512,36 @@ This runs krusader in root mode all the time. A better fix in my opinion is:
     Under the General tab [which it defaults to], top line is kdesu.. in the blank space provided type: '/usr/bin/kdesudo' [without apostrophes]
     Might have a couple pop-ups the first time you enable [letting you know what packages are enabled and what are not], #1 rule: "Don't panic!" just hit ok..ok etc.
     Boom! you get the Root access window [when called], next time [you need root explorer] it won't have the previous warning/config messages.. so you are good to go. 
+
+
+
+X------------------X-------------------X
+Ainda naoTestei.....
+
+5) Fazer USB funcionar no VirtualBox:
+a) Adicionar seu user no vboxusers: 
+# sudo adduser simoes vboxusers
+b) Depois Rebootar
+c) Clique na máquina virtual escolhida depois em Configurações. Selecione USB na lista de configurações e insira um filtro vazio se quiser habilitar qualquer dispositivo USB
+d) Para adicionar algum dispositivo, com a máquina iniciada basta ir no menu Dispositivos -> USB -> e marcar algum dispositivo da lista
+
+
+
+X------------------X-------------------X
+# install wine and ltspice
+sudo apt-get install wine
+# sudo pacman -S wine
+cd /tmp/
+wget http://ltspice.linear-tech.com/software/LTspiceIV.exe
+wine LTspiceIV.exe
+rm LTspiceIV.exe
+
+# start lstpice through wine
+wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceIV/scad3.exe
+
+# start ltspice through wine with /tmp/example.asc
+wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceIV/scad3.exe /tmp/example.asc
+
 
 
 
@@ -770,6 +841,75 @@ X------------------X-------------------X
 - Se botar -v  na linha de comando pra compilar, ele da um monte de mensagems dizendo tudo que ta fazendo!!
 	- Assim pode-se conferir se pegou os parametros do Arm7
 	
+
+
+
+
+--------------------x--------------------------x---------------------------
+Ubuntu11.10 menus na direita
+gconftool-2 --set "/apps/metacity/general/button_layout" --type string ":minimize,maximize,close" 
+
+No Ubuntu 13:
+gsettings set org.gnome.desktop.wm.preferences button-layout 'menu:minimize,maximize,close'
+
+
+
+
+
+
+
+
+--------------------x--------------------------x---------------------------
+DESCRICAO DA MAQUINA:
+Lista com lshw -short
+
+
+H/W path       Device     Class          Description
+====================================================
+                          system         Vostro 14-5480 (069A)
+/0                        bus            0FVD51
+/0/0                      memory         64KiB BIOS
+/0/2f                     processor      Intel(R) Core(TM) i5-5200U CPU @ 2.20GH
+/0/2f/2c                  memory         32KiB L1 cache
+/0/2f/2d                  memory         256KiB L2 cache
+/0/2f/2e                  memory         3MiB L3 cache
+/0/2b                     memory         32KiB L1 cache
+/0/31                     memory         8GiB System Memory
+/0/31/0                   memory         8GiB SODIMM DDR3 Synchronous 1600 MHz (
+/0/100                    bridge         Broadwell-U Host Bridge -OPI
+/0/100/2                  display        HD Graphics 5500
+/0/100/3                  multimedia     Broadwell-U Audio Controller
+/0/100/14                 bus            Wildcat Point-LP USB xHCI Controller
+/0/100/14/0    usb2       bus            xHCI Host Controller
+/0/100/14/0/2             input          USB OPTICAL MOUSE
+/0/100/14/0/4             generic        VFS5011 Fingerprint Reader
+/0/100/14/0/5             multimedia     Integrated_Webcam_HD
+/0/100/14/0/6             input          Touchscreen
+/0/100/14/0/7             communication  Bluetooth wireless interface
+/0/100/14/1    usb3       bus            xHCI Host Controller
+/0/100/16                 communication  Wildcat Point-LP MEI Controller #1
+/0/100/1b                 multimedia     Wildcat Point-LP High Definition Audio 
+/0/100/1c                 bridge         Wildcat Point-LP PCI Express Root Port 
+/0/100/1c.1               bridge         Wildcat Point-LP PCI Express Root Port 
+/0/100/1c.1/0             generic        RTS5227 PCI Express Card Reader
+/0/100/1c.2               bridge         Wildcat Point-LP PCI Express Root Port 
+/0/100/1c.2/0  enp6s0     network        RTL8111/8168/8411 PCI Express Gigabit E
+/0/100/1c.3               bridge         Wildcat Point-LP PCI Express Root Port 
+/0/100/1c.3/0  wlp7s0     network        Wireless 7265
+/0/100/1c.4               bridge         Wildcat Point-LP PCI Express Root Port 
+/0/100/1c.4/0             display        GM108M [GeForce 830M]
+/0/100/1d                 bus            Wildcat Point-LP USB EHCI Controller
+/0/100/1d/1    usb1       bus            EHCI Host Controller
+/0/100/1d/1/1             bus            USB hub
+/0/100/1f                 bridge         Wildcat Point-LP LPC Controller
+/0/100/1f.2               storage        Wildcat Point-LP SATA Controller [AHCI 
+/0/100/1f.3               bus            Wildcat Point-LP SMBus Controller
+/0/1           scsi1      storage        
+/0/1/0.0.0     /dev/sda   disk           128GB SMART SSD SZ9STE
+/0/1/0.0.0/1              volume         511MiB Windows FAT volume
+/0/1/0.0.0/2   /dev/sda2  volume         55GiB EXT4 volume
+/0/1/0.0.0/3   /dev/sda3  volume         62GiB EXT4 volume
+
 
 
 
