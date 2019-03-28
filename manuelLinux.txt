@@ -255,17 +255,14 @@ Para deszipar:
 tar -xvf arduino-1.8.9-linux64.tar.xz 
 
 Para instalar: 
-sudo ./install.sh
+ ./install.sh
+ OBS.: NAO USAR SUDO !!!  Ele isntala sem... dai uns erros, mas tudo bem!!!
 
 --> Essa versao funcionou e programaou o Arduino de primeira, pois eu ja' tinnha resolvido os problemas da USB na versao anterior...
 
 LIBRARIES: /home/simoes/Arduino/libraries/
 --> Mudou as libraries pra esse novo lugar!!
 
-
-OBS.: por algum motivo IDIOTA qualquer, ele instalou como sudo...entao pra rodar tem que dar no terminal:
-sudo su
-arduino
 
 
 -----------------------
