@@ -251,11 +251,22 @@ ARDUINO
 Eu desinstalei a versao que tava (Arduino2:1.0.5) e baixeidireto do GITHUB a ultima versao do Arduino= 1.8.5
 link: https://www.arduino.cc/en/Main/Software
 Deszipar a pasta e executar o install.sh pra instalar o sw.
+Para deszipar:
+tar -xvf arduino-1.8.9-linux64.tar.xz 
+
+Para instalar: 
+sudo ./install.sh
 
 --> Essa versao funcionou e programaou o Arduino de primeira, pois eu ja' tinnha resolvido os problemas da USB na versao anterior...
 
 LIBRARIES: /home/simoes/Arduino/libraries/
 --> Mudou as libraries pra esse novo lugar!!
+
+
+OBS.: por algum motivo IDIOTA qualquer, ele instalou como sudo...entao pra rodar tem que dar no terminal:
+sudo su
+arduino
+
 
 -----------------------
 Jeito Ruim de instalar (Instala uma versao maluca Arduino2:1.0.5)
@@ -299,7 +310,7 @@ $ sudo apt install oracle-java8-set-default
 
 DAi' FUNCIONOU!!!
 
--------------x---------
+-------------x--------
 
 --> Ver todos os grupos eos users que pertencem a eles:
 cat /etc/group
@@ -313,6 +324,59 @@ cat /etc/group
 	--> Isso mostra tudo que acontece na maquina... Vai mostrar o mapeamento da USB
 	--> Pra nao precisar limpar o log, tente:
 	dmesg -w     --> Muito Legal!  Fica monitorando  a partir de agora tudo que acontece!!
+
+x---------------x--------------------x
+NODE NA IDE ARDUINO:
+ESP 8266
+
+Entrar em: http://www.kevindarrah.com/wiki/index.php?title=TrigBoard
+Procurar pelo link do Base Firmware.
+
+Go to File>>Preferences and add this URL to to the "Additional Boards Manager URL". 
+Paste this link: http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+Go to Tools>>Board>>Boards Manager... Search for ESP8266, and go ahead and click install
+Dai ele vai instalar suporte para a nova placa.
+
+ir em TOOLS>>Boards  e escolher:
+Node MCU 0.9 (ESP-12Module)
+
+Para testar, seecione a porta certa e abra o Files>>Examples  e procure o ESP 8266 >> Blink
+No meu so' programou se botar a plaquinha sobre os cabos, NAO PODE ENCOSTAR NA MESA!!!!
+
+WARNING:
+1) Quando instala a board,ele instala tambemas libraries do ESP
+Mas ele so' mostra em files>>exemples se tiver selecionado a Borad MCU 0.9 (ESP-12Module), senao nao aparece!!!
+
+2) CUIDADO!!! OS NUMEROS DO DEFINE SAO OS GPIO, nao os pinos do chip!!! Como na Raspberry
+Placa 	GPIO (Nome que deve dar no Define)
+d0		16
+d1		5
+d2		4
+d3 		0
+d4		2
+d5		14
+d6		12
+d7		13
+d8		15
+A0		17
+
+x-----------x------------x-----------x
+Como fazer ICONES 
+
+gedit ~/Desktop/Arduino.desktop
+
+[Desktop Entry]
+ Name=Arduino IDE
+ Comment=Arduino IDE
+ Exec=/home/simoes/Arduino/arduino-1.8.9/arduino
+ Path=/home/simoes/Arduino/arduino-1.8.9/
+ Icon=/home/simoes/Arduino/arduino-1.8.9/lib/icons/24x24/apps/arduino.png
+ Terminal=false
+ Type=Application
+ Categories=Utility;Application;Development;
+
+
 
 
 x---------------x--------------------x
