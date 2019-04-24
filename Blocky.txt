@@ -25,3 +25,48 @@ Mas o IRON vai ver como configura isso direito!!
 
 --------------x------------
 http://principia.icmc.usp.br/redmine/login
+
+------------------x--------------
+
+Connectando ao SSH do principia:
+
+	Windows: http://conteudo.icmc.usp.br/CMS/Arquivos/arquivos_enviados/STI_23_Tutorial_SSH.pdf
+	Substitua grad.icmc.usp.br por principia.icmc.usp.br e usuarios\nusp por principia
+
+	Linux: ssh principia@principia.icmc.usp.br -p 4004
+	senha do principia: 
+
+############# Para mexer no repositório do git ###############
+
+#### Primeira vez ####
+-Clonar o repositório (baixar o repositório do principia pro seu pc, criando um repositório local)
+-Fazer suas alterações
+-Dar push no repositório (enviar as modificações do seu repositório local para o do principia)
+
+#### Demais vezes ####
+-Dar pull no repositório (atualizar seu repositório local)
+-Fazer suas alterações
+-Dar push no repositório 
+
+/////////// Para qualquer comando no git ele vai pedir a senha //////////////////
+	senha: 
+
+/////////// Na primeira vez ele vai pedir para configurar o usuário /////////////
+	git config --global user.email "you@example.com"
+	git config --global user.name "Your Name"
+
+
+-Clonar o repositório
+	git clone ssh://principia@principia.icmc.usp.br:4004/opt/redmine-repositories/robos-nas-escolas/software
+
+-Dar pull no repositório
+	git pull origin master
+
+-Dar push no repositório 
+	git add <diretório ou arquivos alterados>
+	git commit -m "<mensagem do commit>"
+	git push origin master
+
+
+
+
