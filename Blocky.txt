@@ -1,0 +1,23 @@
+Como  mecher no Blocky do IRON
+
+Acessar GIT: principia.icmc.usp.br:4004/svr/git/robos-nas-escolas/software
+Senha do GIT: Perguntar pro Bileky(newsletter)
+
+Na minha maquina esta' clonad em:
+~/software/projects/scratch/BlocklyDuino
+
+Ir ate´ la' e digitar esso comando de python:
+python arduino_web_server.py --cmd /home/simoes/arduino-1.8.9/arduino
+
+Dai' ele cria um endereco pra abrir no browser:
+Blocklyduino can now be accessed at http://127.0.0.1:8080/
+
+DAi' e' so' digitar no Crome: http://127.0.0.1:8080/
+
+Crie um projeto novo: Nao precisa botar o LOOP principal, pois ja' poe automatico ascoisas dentro de:
+void setup()    e     void loop()
+
+Dai' e' so' dar: save Arduino code  que ele salva o teste.ino  na pasta Downloads
+
+Por enquanto, precisa abrir com a IDE ARDUINO pra selecionar a board e a porta e programar!!
+Mas o IRON vai ver como configura isso direito!!
