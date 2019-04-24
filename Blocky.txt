@@ -21,3 +21,7 @@ Dai' e' so' dar: save Arduino code  que ele salva o teste.ino  na pasta Download
 
 Por enquanto, precisa abrir com a IDE ARDUINO pra selecionar a board e a porta e programar!!
 Mas o IRON vai ver como configura isso direito!!
+
+
+--------------x------------
+http://principia.icmc.usp.br/redmine/login
