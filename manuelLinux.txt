@@ -281,12 +281,17 @@ ARDUINO
 Eu desinstalei a versao que tava (Arduino2:1.0.5) e baixeidireto do GITHUB a ultima versao do Arduino= 1.8.5
 link: https://www.arduino.cc/en/Main/Software
 Deszipar a pasta e executar o install.sh pra instalar o sw.
-Para deszipar:
+
+MOVA de Downloads para Documentos ou para HOME, senao o retardado instala no Downloads!
+Para deszipar (Usar TAR mesmo, pois deixa as permissoes certas!!):
 tar -xvf arduino-1.8.9-linux64.tar.xz 
 
 Para instalar: 
- ./install.sh
- OBS.: NAO USAR SUDO !!!  Ele isntala sem... dai uns erros, mas tudo bem!!!
+ sudo ./install.sh
+
+Para arrumar as permissoes das pastas PARA O USUARIO NORMAL (se nao, ele vai ficar enchendo o saco pra executar como SUDO), executar:  
+./arduino-linux-setup.sh $USER
+
 
 --> Essa versao funcionou e programaou o Arduino de primeira, pois eu ja' tinnha resolvido os problemas da USB na versao anterior...
 
