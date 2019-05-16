@@ -53,6 +53,10 @@ sudo rm -r NOMEDAPASTA  --> Remove a pasta (-r  =>  recursivamente)
 mkdir  NOMEDAPASTA   --> Cria pasta
 
 
+x---------------x--------------------x
+GNOME TWEAK TOOL
+Pra instalar: sudo apt-get install gnome-tweak-tool
+Pra rodar: gnome-teaks
 
 x---------------x--------------------x
 CRIAR LINK NO DESKTOP
