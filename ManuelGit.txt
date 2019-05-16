@@ -29,8 +29,10 @@ Obs.: Se fizer assim, vai te pedir o login e senha cada vez que da um PUSH.
 
 Pode fazer por SSH -->
 	CRIA UMA CHAVE SSH:
-	ssh-keygen -t rsa -b 4096 -C "simoes@icmc.usp.br"   -->  Cria uma chave SSH e salva em: ~/.sh 
+	ssh-keygen -t rsa -b 4096 -C "simoes@icmc.usp.br"   -->  Cria uma chave SSH e salva em: ~/.ssh 
 		--> Tem que ser o mesmo email do github!
+		--> Voce pode deixar a passward em branco, senao vaiter que digitar ela toda vez que fizer um git push!
+		--> Quando ele pedir uma nome de arquivo, deixe em branco, que ele salva por  default no ~/.ssh/id_rsa.pub
 
 	CADASTRE A CHAVE NO GITHUB
 		--> Vai na aba Setings do User (simoesusp)

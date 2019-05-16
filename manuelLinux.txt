@@ -244,6 +244,32 @@ Pra rodar um programa:
 - Digita: ./ants2.exe
 
 
+x---------------x--------------------x 
+MICROSCÓPIO NO LINUX USANDO MPV
+
+Ao conectar o USB do microscópio, o Linux irá 'montá-lo' em /dev/video<numero>
+Normalmente, /dev/video0 é a webcam do notebook, então o microscópio será /dev/video1 ou qualquer coisa maior
+Checar o número correto com o comando:
+
+- ls /dev/video*
+
+Iremos usar mpv para exibir a imagem.
+Instalar mpv, caso ainda não esteja instalado:
+
+- sudo apt install mpv
+
+Para abrir:
+
+- mpv /dev/video1 --video-rotate=180 --video-zoom=0.1 --fs
+
+OBS: 
+	por algum motivo, a imagem está invertida, por isso usamos --video-rotate=180 para ficar normal
+	--video-zoom=0.1 diminui a imagem, aumentando a nitidez
+	--fs abre em fullscreen
+
+Para tirar fotos do que o microscópio está vendo, podemos usar o próprio mpv, apertando a tecla 's'
+Para gravar o vídeo use a opção --record-file=<nome do arquivo>
+
 
 x---------------x--------------------x
 ARDUINO
