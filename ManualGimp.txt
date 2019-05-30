@@ -1,0 +1,25 @@
+1) tamanho do papel: Image > canvas size  A4 = 297mm x 210mm
+
+2) Abra uma imagem como um new layer
+
+3) Select qq coisa com rectangulo ou fuzzy selection
+
+4) Copy
+
+5) Paste as new layer
+
+6) Mova pro lugar certocom move
+
+7) Clique na layer e Scale layer
+
+8) Clique na layer e mude o nome com Edit layer attributes
+
+9) CUIDADO!! --> Se tiver feito uma selecaozinha de nada em algum lugar, ele SO' DEIXA DESENHAR DENTRO DELA!!!
+--> Vai em Menu > Selection > None     Dai' vai poder desenhar em qq lugar!!!!
+
+10) Pra mostrar a regua em mm e' so' clicar no cantinho de baixo da imagem, na borda e selecionar mm
+
+11) Scaling: Usar Scale Layer (clicando no layer)
+
+12) Da' pra criar um Layer Group > clicaar e arrastar os Laeyers pra dentro do grupo e dai' pode scalar tudo junto!!
+

@@ -344,7 +344,7 @@ DAi' FUNCIONOU!!!
 
 -------------x--------
 
---> Ver todos os grupos eos users que pertencem a eles:
+--> Ver todos os grupos e os users que pertencem a eles:
 cat /etc/group
 
 --> Se tudo der errado... Tentar:
@@ -360,6 +360,7 @@ cat /etc/group
 x---------------x--------------------x
 NODE NA IDE ARDUINO:
 ESP 8266
+(Para o ESP32 e' quase a mesma coisa, ver no README do git: https://github.com/simoesusp/ESP32_Projects)
 
 Entrar em: http://www.kevindarrah.com/wiki/index.php?title=TrigBoard
 Procurar pelo link do Base Firmware.
@@ -377,7 +378,7 @@ Para testar, seecione a porta certa e abra o Files>>Examples  e procure o ESP 82
 No meu so' programou se botar a plaquinha sobre os cabos, NAO PODE ENCOSTAR NA MESA!!!!
 
 WARNING:
-1) Quando instala a board,ele instala tambemas libraries do ESP
+1) Quando instala a board, ele instala tambem as libraries do ESP
 Mas ele so' mostra em files>>exemples se tiver selecionado a Borad MCU 0.9 (ESP-12Module), senao nao aparece!!!
 
 2) CUIDADO!!! OS NUMEROS DO DEFINE SAO OS GPIO, nao os pinos do chip!!! Como na Raspberry
