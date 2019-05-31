@@ -8,7 +8,7 @@
 
 5) Paste as new layer
 
-6) Mova pro lugar certocom move
+6) Mova pro lugar certo com move
 
 7) Clique na layer e Scale layer
 
@@ -20,6 +20,16 @@
 10) Pra mostrar a regua em mm e' so' clicar no cantinho de baixo da imagem, na borda e selecionar mm
 
 11) Scaling: Usar Scale Layer (clicando no layer)
+--> Da' pra criar um Layer Group > clicar e arrastar os Layers pra dentro do grupo e dai' pode scalar tudo junto!!
 
-12) Da' pra criar um Layer Group > clicaar e arrastar os Laeyers pra dentro do grupo e dai' pode scalar tudo junto!!
+12) Quando quizer copiar um pedaco da imagem:
+--> Selecionaro pedaco (o layer que tem o pedaco tem que ta' selecionado (marcado na esquerda))
+--> Copy (Ctrl-C)
+--> Agoratem que selecionar o layer onde quer pastear ... Se for o mesmo tudo bem, se  quiser pastear em outro layer, tem que selecionar !
+--> Tambem pode criar umnovo layer e seleciona-lo pra pastear ali.
+--> Paste (ctrl-V)
+--> clicare segurar para arrastar ate' onde quiser
+--> clicar e selecionar outro lugar pra encerrar a operacao (ou da' outro paste e segue...)
+
+
 
