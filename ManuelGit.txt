@@ -80,6 +80,19 @@ function gg(){
   }
 
 
+===> Quando o FRAN fizer merda nos arquivos locais da maquina, e a gente quiser dar um GIT PULL pra voltar a ficar como no github... Acaba dando uma mensagem de ERRO: 
+error: Your local changes to the following files would be overwritten by merge:
+	BlockySource/blockly/apps/blocklyduino/index.html
+	BlockySource/blockly/blocks/principia.js
+	BlockySource/blockly/generators/arduino/principia.js
+Please commit your changes or stash them before you merge.
+
+
+===> Pra consertar, git reset --hard HEAD       (Please, cuidado com qq coisa que se chama HARD!!!!)
+===> Depois de resetar vai ficar igual ao HEAD do github. Dai' da' um git pull que funciona.
+
+
+
 
 
 REVERTER PARA UMA VERSAO:
