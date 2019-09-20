@@ -52,7 +52,9 @@ Pode fazer por SSH -->
 
 	--> Dai' sempre que fizer PUSH, ele vai usar a chave SSH que foii criada! E nao vai mais pedir a senha!!!
 
-
+	TROCAR PARA O GITLAB:
+		git remote set-url origin git@gitlab.com:simoesusp/Arduino-Projects.git
+		
 
 Mostra o status da pasta local se tem mudancas locais e se esta'  diferente do repositorio:
 git status
